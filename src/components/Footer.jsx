@@ -14,7 +14,7 @@ import {
   FaPinterest,
   FaCalendar,
 } from "react-icons/fa";
-import logo3 from "/eurocore-logo.png?url";
+import logo3 from "/eurocore-Dark-BG-logo.png?url";
 import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -70,7 +70,7 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/company/107980266/admin/dashboard/"
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaLinkedin className="text-xl" />
               </a>
@@ -78,42 +78,42 @@ const Footer = () => {
                 href="https://x.com/cloudkonektion
 "
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaXTwitter className="text-xl" />
               </a>
               <a
                 href="https://www.facebook.com/cloudkonektion/"
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaFacebook className="text-xl" />
               </a>
               <a
                 href="https://www.instagram.com/cloudkonektion/"
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaInstagram className="text-xl" />
               </a>
               <a
                 href="https://www.tiktok.com/@cloudkonektion"
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaTiktok className="text-xl" />
               </a>
               <a
                 href="https://www.youtube.com/@cloudkonektion0"
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaYoutube className="text-xl" />
               </a>
               <a
                 href="https://www.pinterest.com/cloudkonektion/"
                 target="_blank"
-                className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                className="text-gray-400 hover:text-[#F37F21] transition-colors"
               >
                 <FaPinterest className="text-xl" />
               </a>
@@ -128,9 +128,9 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="flex items-center text-gray-400 hover:text-[#00BCFF] transition-colors"
+                    className="flex items-center text-gray-400 hover:text-[#F37F21] transition-colors"
                   >
-                    <FaChevronRight className="text-xs mr-2 text-[#00BCFF]" />
+                    <FaChevronRight className="text-xs mr-2 text-[#F37F21]" />
                     {link.name}
                   </a>
                 </li>
@@ -146,9 +146,9 @@ const Footer = () => {
                 <li key={index}>
                   <a
                     href="services"
-                    className="flex items-center text-gray-400 hover:text-[#00BCFF] transition-colors"
+                    className="flex items-center text-gray-400 hover:text-[#F37F21] transition-colors"
                   >
-                    <FaChevronRight className="text-xs mr-2 text-[#00BCFF]" />
+                    <FaChevronRight className="text-xs mr-2 text-[#F37F21]" />
                     {service}
                   </a>
                 </li>
@@ -161,7 +161,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
             <div className="space-y-4">
               <div className="flex items-start">
-                <FaMapMarkerAlt className="text-[#00BCFF] mt-1 mr-3" />
+                <FaMapMarkerAlt className="text-[#F37F21] mt-1 mr-3" />
                 <p className="text-gray-400">
                   60, ST. JOSEPH STREET,
                   <br />
@@ -170,17 +170,17 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <div className="flex-shrink-0 mt-1">
-                  <FaCalendar className="h-5 w-5 text-[#00BCFF]" />
+                  <FaCalendar className="h-5 w-5 text-[#F37F21]" />
                 </div>
                 <div className="ml-3">
                   <p className="text-gray-400">Mon-Fri, 9am-5pm PST</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <FaEnvelope className="text-[#00BCFF] mr-3" />
+                <FaEnvelope className="text-[#F37F21] mr-3" />
                 <a
                   href="mailto:info@cloudkonektion.com"
-                  className="text-gray-400 hover:text-[#00BCFF] transition-colors"
+                  className="text-gray-400 hover:text-[#F37F21] transition-colors"
                 >
                   help@cloudkonektion.eu
                 </a>
@@ -225,8 +225,8 @@ const Footer = () => {
                 type="submit"
                 className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center min-w-[120px] ${
                   isSubmitting
-                    ? "bg-[#00a2d6] cursor-not-allowed"
-                    : "bg-[#00BCFF] hover:bg-[#0095cc] hover:shadow-lg"
+                    ? "bg-[#F37F21] cursor-not-allowed"
+                    : "bg-[#F37F21] hover:bg-[#f38021e5] hover:shadow-lg"
                 }`}
                 disabled={isSubmitting}
               >
@@ -270,19 +270,19 @@ const Footer = () => {
           <div className="flex space-x-6">
             <a
               href="#"
-              className="text-gray-500 hover:text-[#00BCFF] text-sm transition-colors"
+              className="text-gray-500 hover:text-[#F37F21] text-sm transition-colors"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-[#00BCFF] text-sm transition-colors"
+              className="text-gray-500 hover:text-[#F37F21] text-sm transition-colors"
             >
               Terms of Service
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-[#00BCFF] text-sm transition-colors"
+              className="text-gray-500 hover:text-[#F37F21] text-sm transition-colors"
             >
               Cookies Policy
             </a>
