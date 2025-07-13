@@ -32,11 +32,7 @@ import {
 
 // SVG Dotted Background Component
 const DottedBackground = () => (
-  <div className="absolute inset-0 -z-10">
-    {/* Blurred glass-like overlay */}
-    <div className="w-full h-full bg-white/20 backdrop-blur-md" />
-
-    {/* Dotted pattern */}
+  <div className="fixed inset-0 -z-10 overflow-hidden opacity-10">
     <svg
       className="absolute inset-0 w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
