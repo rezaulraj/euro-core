@@ -1,24 +1,28 @@
 import React, { useState, useEffect } from "react";
 import ReactCountryFlag from "react-country-flag";
-import { FiMenu, FiX, FiChevronDown, FiGlobe, FiMail } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown, FiMail } from "react-icons/fi";
 import {
   HiOutlineOfficeBuilding,
   HiOutlineUserGroup,
   HiOutlineInformationCircle,
-  HiOutlineLogin,
 } from "react-icons/hi";
 import { MdOutlineHome } from "react-icons/md";
 import { TbUsersPlus } from "react-icons/tb";
+import { GrUserWorker } from "react-icons/gr";
+import { RiServiceLine } from "react-icons/ri";
+
 import ContactForm from "./ContactForm";
 import logo2 from "/eurocore-logo.png?url";
 import logo3 from "/eurocore-Dark-BG-logo.png?url";
-import { RiServiceFill, RiServiceLine } from "react-icons/ri";
+import { FaHandsHelping } from "react-icons/fa";
+
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("US");
   const [isHoveringLanguage, setIsHoveringLanguage] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
+
   const languages = [
     { code: "US", name: "English", countryCode: "US" },
     { code: "MT", name: "Malta", countryCode: "MT" },
@@ -30,19 +34,30 @@ const Header = () => {
   const navItems = [
     { label: "Home", path: "/", icon: <MdOutlineHome className="text-xl" /> },
     {
-      label: "Services",
-      path: "/services",
-      icon: <RiServiceLine className="text-xl" />,
-    },
-    {
-      label: "For Employers",
-      path: "/for-employers",
+      label: "Industries",
+      path: "/industries",
       icon: <HiOutlineOfficeBuilding className="text-xl" />,
     },
     {
-      label: "For Candidates",
-      path: "/for-candidates",
+      label: "Employers",
+      path: "/for-employers",
+      icon: <GrUserWorker className="text-xl" />,
+    },
+    {
+      label: "Workers & Partners",
       icon: <HiOutlineUserGroup className="text-xl" />,
+      subNav: [
+        {
+          label: "What we offer",
+          icons: <RiServiceLine className="text-white" />,
+          path: "/what-we-offer",
+        },
+        {
+          label: "Partnership",
+          icons: <FaHandsHelping className="text-white" />,
+          path: "/partnership",
+        },
+      ],
     },
     {
       label: "About Us",
@@ -63,9 +78,11 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const handleContactSubmit = (formData) => {
     console.log("Form submitted:", formData);
   };
+
   return (
     <>
       <header
@@ -74,23 +91,10 @@ const Header = () => {
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo - Left */}
-          <div className="flex items-center">
-            {/* <h1
-              className="text-3xl font-bold transition-colors duration-500"
-              style={{ color: "#00BCFF" }}
-            >
-              Cloud Konektion
-            </h1> */}
-
-            <a href="/">
-              {scrolled ? (
-                <img src={logo2} alt="" className="h-5" />
-              ) : (
-                <img src={logo3} alt="" className="h-5" />
-              )}
-            </a>
-          </div>
+          {/* Logo */}
+          <a href="/">
+            <img src={scrolled ? logo2 : logo3} alt="logo" className="h-5" />
+          </a>
 
           {/* Mobile Menu Button */}
           <button
@@ -112,27 +116,46 @@ const Header = () => {
             )}
           </button>
 
-          {/* Desktop Navigation - Center */}
-          <nav className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <a
-                key={item.path}
-                href={item.path}
-                className={`flex items-center space-x-2 text-lg font-medium transition-all duration-300 ${
-                  scrolled
-                    ? "text-gray-800 hover:text-[#00BCFF]"
-                    : "text-white hover:text-gray-200"
-                }`}
-              >
-                <span className="">{item.icon}</span>
-                <span>{item.label}</span>
-              </a>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-4 relative">
+            {navItems.map((item, idx) => (
+              <div key={idx} className="relative group">
+                <a
+                  href={item.path || "#"}
+                  className={`flex items-center space-x-2 text-lg font-medium transition-all duration-300 ${
+                    scrolled
+                      ? "text-gray-800 hover:text-[#00BCFF]"
+                      : "text-white hover:text-gray-200"
+                  }`}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                  {item.subNav && <FiChevronDown className="text-lg font-medium mt-1" />}
+                </a>
+
+                {item.subNav && (
+                  <div className="absolute left-0 mt-3 w-60 bg-[#123B65] shadow-xl rounded-xl border border-gray-100 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-40">
+                    <ul className="py-3">
+                      {item.subNav.map((sub, subIdx) => (
+                        <li key={subIdx}>
+                          <a
+                            href={sub.path}
+                            className="flex items-center space-x-3 px-4 py-2 text-gray-100 hover:bg-[#123b65da] hover:text-[#00BCFF] transition-colors duration-200"
+                          >
+                            {sub.icons}
+                            <span>{sub.label}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
           {/* Right Section */}
           <div className="hidden md:flex items-center space-x-6">
-            {/* Language Selector */}
             {/* Language Selector */}
             <div className="relative">
               <div
@@ -144,7 +167,7 @@ const Header = () => {
                   className={`flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 ${
                     scrolled
                       ? "text-gray-800 hover:bg-blue-200"
-                      : "text-white hover:bg-blue-100/20 hover:bg-opacity-10"
+                      : "text-white hover:bg-blue-100/20"
                   }`}
                 >
                   <ReactCountryFlag
@@ -209,28 +232,21 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div
-            className={`md:hidden bg-white h-screen shadow-xl transition-all duration-500 ${
-              mobileMenuOpen
-                ? "max-h-screen overflow-y-scroll opacity-100"
-                : "max-h-0 opacity-0 overflow-y-scroll"
-            }`}
-          >
+          <div className="md:hidden bg-white h-screen shadow-xl transition-all duration-500">
             <div className="container mx-auto px-4 py-2">
               <nav className="flex flex-col space-y-1">
-                {navItems.map((item) => (
+                {navItems.map((item, idx) => (
                   <a
-                    key={item.path}
+                    key={idx}
                     href={item.path}
                     className="flex items-center space-x-4 text-lg font-medium text-gray-800 py-2 border-b border-gray-100 hover:text-[#00BCFF] transition-colors duration-300"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    <span className="text-[#00BCFF]">{item.icon}</span>
+                    {item.icon}
                     <span>{item.label}</span>
                   </a>
                 ))}
               </nav>
-
               <div className="mt-4 pt-4 border-t border-gray-200">
                 <h4 className="text-gray-500 text-xl mb-4 font-medium">
                   Select Language
@@ -275,6 +291,7 @@ const Header = () => {
           </div>
         )}
       </header>
+
       <ContactForm
         show={showContactForm}
         onClose={() => setShowContactForm(false)}
