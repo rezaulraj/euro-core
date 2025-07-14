@@ -160,8 +160,9 @@ const CompanyOverview = () => {
               className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight"
               variants={item}
             >
-              <span className="text-[#F37F21]">Malta’s </span>
-              Leading Executive Search
+              Your
+              <span className="text-[#F37F21]"> Premier </span>
+              Executive Search
               <span className="text-[#F37F21]"> Partner</span>
             </motion.h2>
 
@@ -169,10 +170,10 @@ const CompanyOverview = () => {
               className="text-lg text-gray-600 leading-relaxed"
               variants={item}
             >
-              Euro Core leads the way in executive recruitment across
-              Malta’s dynamic business landscape. <br /> With a consultative
-              approach and smart recruitment tools, we help ambitious companies
-              attract and hire top-tier talent faster and more efficiently.
+              Euro Core leads the way in executive recruitment across Malta’s
+              dynamic business landscape. <br /> With a consultative approach
+              and smart recruitment tools, we help ambitious companies attract
+              and hire top-tier talent faster and more efficiently.
             </motion.p>
 
             {/* Stats */}

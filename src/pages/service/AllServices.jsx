@@ -640,7 +640,7 @@ const AllServices = () => {
                     Available Roles:
                   </h4>
                   <ul className="space-y-1">
-                    {category.roles.slice(0, 4).map((role, i) => (
+                    {category.roles.map((role, i) => (
                       <motion.li
                         key={i}
                         className="flex items-center"
@@ -651,20 +651,10 @@ const AllServices = () => {
                         <span className="text-gray-700">{role}</span>
                       </motion.li>
                     ))}
-                    {category.roles.length > 4 && (
-                      <motion.li
-                        className="text-sm text-gray-500"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.5 }}
-                      >
-                        + {category.roles.length - 4} more roles
-                      </motion.li>
-                    )}
                   </ul>
                 </div>
 
-                <motion.button
+                {/* <motion.button
                   onClick={() => {
                     const section = document.querySelector("#contact");
                     section?.scrollIntoView({ behavior: "smooth" });
@@ -680,7 +670,7 @@ const AllServices = () => {
                     Recruit {category.title.split("/")[0]} Staff
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-[#E06D1A] to-[#D45C0A] opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-                </motion.button>
+                </motion.button> */}
               </div>
             </motion.div>
           ))}

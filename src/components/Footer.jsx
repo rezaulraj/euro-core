@@ -60,7 +60,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-6 ">
             <a href="/">
-              <img src={logo3} alt="" className="h-20" />
+              <img src={logo3} alt="" className="h-14" />
             </a>
             <p className="text-gray-400 mt-4">
               Partnering with ambitious organizations in Europe, APAC, and MENA

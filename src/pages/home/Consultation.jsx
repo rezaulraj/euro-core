@@ -177,7 +177,7 @@ const Consultation = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Request Free Consultation</span>
+              <span>Request Free Meeting</span>
               <FaCalendarAlt className="ml-3" />
             </motion.button>
           </div>

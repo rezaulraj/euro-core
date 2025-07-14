@@ -1,31 +1,57 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
-import { FiCheckCircle, FiMail, FiMessageSquare, FiUser } from "react-icons/fi";
+import { useState, useEffect } from "react";
+import { FiX, FiUser, FiBriefcase } from "react-icons/fi"; // Import icons
 
-const ContactForm = ({ show, onClose, onSubmit }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
+const ContactForm = ({ show, onClose }) => {
+  const [selectedOption, setSelectedOption] = useState("employee");
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  useEffect(() => {
+    if (selectedOption === "employee" || selectedOption === "partner") {
+      const script = document.createElement("script");
+      script.src = "https://assets.calendly.com/assets/external/widget.js";
+      script.async = true;
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [selectedOption]);
+
+  useEffect(() => {
+    if (!show) {
+      setSelectedOption("employee");
+    }
+  }, [show]);
+
+  const renderCalendly = () => {
+    const url =
+      selectedOption === "employee"
+        ? "https://calendly.com/eurocore/employee"
+        : "https://calendly.com/eurocore/partners";
+
+    return (
+      <div id="booking-section">
+        <div
+          className="calendly-inline-widget"
+          data-url={url}
+          style={{ minWidth: "320px", height: "700px" }}
+        ></div>
+        <button
+          onClick={onClose}
+          className="mt-4 w-full bg-gray-200 text-gray-700 py-2 px-4 rounded hover:bg-gray-300"
+        >
+          Close
+        </button>
+      </div>
+    );
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
-    setFormSubmitted(true);
-
-    // Reset after 3 seconds
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
-      onClose();
-    }, 3000);
+  const scrollToBooking = () => {
+    const section = document.getElementById("booking-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -35,111 +61,70 @@ const ContactForm = ({ show, onClose, onSubmit }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 opacity-90 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
         >
           <motion.div
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
             transition={{ type: "spring", damping: 25 }}
-            className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative"
+            className="bg-white max-h-[90vh] overflow-auto rounded-xl shadow-2xl max-w-2xl w-full p-8 relative"
           >
-            {!formSubmitted ? (
-              <>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Contact Us
-                </h3>
-                <form onSubmit={handleSubmit}>
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiUser className="text-gray-500 mr-2" />
-                        <label htmlFor="name" className="text-gray-700">
-                          Your Name
-                        </label>
-                      </div>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiMail className="text-gray-500 mr-2" />
-                        <label htmlFor="email" className="text-gray-700">
-                          Your Email
-                        </label>
-                      </div>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <div className="flex items-center mb-2">
-                        <FiMessageSquare className="text-gray-500 mr-2" />
-                        <label htmlFor="message" className="text-gray-700">
-                          Message
-                        </label>
-                      </div>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows="4"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition"
-                        required
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="mt-8 flex space-x-4">
-                    <button
-                      type="submit"
-                      className="flex-1 bg-[#00BCFF] text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-600 transition-colors shadow-md hover:shadow-lg"
-                    >
-                      Send Message
-                    </button>
-                    <button
-                      type="button"
-                      onClick={onClose}
-                      className="flex-1 bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </form>
-              </>
-            ) : (
-              <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                className="text-center py-8"
-              >
-                <FiCheckCircle className="text-5xl text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Thank You!
-                </h3>
-                <p className="text-gray-600">
-                  Your message has been sent successfully.
-                </p>
-                <p className="text-gray-600">We'll get back to you soon.</p>
-              </motion.div>
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+              aria-label="Close"
+            >
+              <FiX size={24} />
+            </button>
+
+            <div className="mb-4 flex justify-center space-x-10 text-center">
+              <label className="font-medium flex items-center cursor-pointer">
+                <input
+                  type="radio"
+                  name="option"
+                  value="employee"
+                  checked={selectedOption === "employee"}
+                  onChange={() => setSelectedOption("employee")}
+                  className="mr-2"
+                />
+                <FiUser className="mr-1 text-blue-500" size={20} />
+                Book as Employee
+              </label>
+
+              <label className="font-medium flex items-center cursor-pointer">
+                <input
+                  type="radio"
+                  name="option"
+                  value="partner"
+                  checked={selectedOption === "partner"}
+                  onChange={() => setSelectedOption("partner")}
+                  className="mr-2"
+                />
+                <FiBriefcase className="mr-1 text-green-500" size={20} />
+                Book as Partner
+              </label>
+            </div>
+
+            {(selectedOption === "employee" ||
+              selectedOption === "partner") && (
+              <div className="text-center mb-6">
+                <button
+                  onClick={scrollToBooking}
+                  className="bg-[#00BCFF] text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-blue-600 transition"
+                >
+                  Quickly Booking
+                </button>
+              </div>
             )}
+
+            {(selectedOption === "employee" || selectedOption === "partner") &&
+              renderCalendly()}
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
   );
 };
+
 export default ContactForm;

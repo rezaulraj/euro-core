@@ -119,8 +119,8 @@ const HeroHome = () => {
               transition={{ delay: 0.6 }}
             >
               <p className="text-lg md:text-xl text-white bg-black/40 px-4 py-2 rounded-lg inline-block">
-                Malta’s{" "}
-                <span className="font-bold text-[#F37F21]">
+                Your
+                <span className="font-bold text-[#F37F21] pl-2">
                   #1 Executive Search Partner
                 </span>
               </p>
