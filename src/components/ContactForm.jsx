@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { FiX, FiUser, FiBriefcase } from "react-icons/fi"; // Import icons
+import { FiX, FiUser, FiBriefcase, FiArrowRight } from "react-icons/fi";
 
 const ContactForm = ({ show, onClose }) => {
-  const [selectedOption, setSelectedOption] = useState("employee");
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [showBooking, setShowBooking] = useState(false);
 
   useEffect(() => {
-    if (selectedOption === "employee" || selectedOption === "partner") {
+    if (showBooking) {
       const script = document.createElement("script");
       script.src = "https://assets.calendly.com/assets/external/widget.js";
       script.async = true;
@@ -16,11 +17,12 @@ const ContactForm = ({ show, onClose }) => {
         document.body.removeChild(script);
       };
     }
-  }, [selectedOption]);
+  }, [showBooking]);
 
   useEffect(() => {
     if (!show) {
-      setSelectedOption("employee");
+      setSelectedOption(null);
+      setShowBooking(false);
     }
   }, [show]);
 
@@ -31,27 +33,19 @@ const ContactForm = ({ show, onClose }) => {
         : "https://calendly.com/eurocore/partners";
 
     return (
-      <div id="booking-section">
+      <div className="h-full w-full">
         <div
           className="calendly-inline-widget"
           data-url={url}
-          style={{ minWidth: "320px", height: "700px" }}
+          style={{ width: "100%", height: "100%" }}
         ></div>
-        <button
-          onClick={onClose}
-          className="mt-4 w-full bg-gray-200 text-gray-700 py-2 px-4 rounded hover:bg-gray-300"
-        >
-          Close
-        </button>
       </div>
     );
   };
 
-  const scrollToBooking = () => {
-    const section = document.getElementById("booking-section");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+    setTimeout(() => setShowBooking(true), 800); // Delay to allow animation to complete
   };
 
   return (
@@ -61,65 +55,122 @@ const ContactForm = ({ show, onClose }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 overflow-hidden"
         >
+          {/* Background overlay */}
           <motion.div
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 50, opacity: 0 }}
-            transition={{ type: "spring", damping: 25 }}
-            className="bg-white max-h-[90vh] overflow-auto rounded-xl shadow-2xl max-w-2xl w-full p-8 relative"
+            className="absolute inset-0 bg-black/50"
+            onClick={onClose}
+          />
+
+          {/* Main container */}
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center p-4"
+            layout
           >
-            <button
-              onClick={onClose}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
-              aria-label="Close"
-            >
-              <FiX size={24} />
-            </button>
-
-            <div className="mb-4 flex justify-center space-x-10 text-center">
-              <label className="font-medium flex items-center cursor-pointer">
-                <input
-                  type="radio"
-                  name="option"
-                  value="employee"
-                  checked={selectedOption === "employee"}
-                  onChange={() => setSelectedOption("employee")}
-                  className="mr-2"
-                />
-                <FiUser className="mr-1 text-blue-500" size={20} />
-                Book as Employee
-              </label>
-
-              <label className="font-medium flex items-center cursor-pointer">
-                <input
-                  type="radio"
-                  name="option"
-                  value="partner"
-                  checked={selectedOption === "partner"}
-                  onChange={() => setSelectedOption("partner")}
-                  className="mr-2"
-                />
-                <FiBriefcase className="mr-1 text-green-500" size={20} />
-                Book as Partner
-              </label>
-            </div>
-
-            {(selectedOption === "employee" ||
-              selectedOption === "partner") && (
-              <div className="text-center mb-6">
+            {!showBooking ? (
+              // Initial selection view
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative"
+                layout
+              >
                 <button
-                  onClick={scrollToBooking}
-                  className="bg-[#00BCFF] text-white px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-blue-600 transition"
+                  onClick={onClose}
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+                  aria-label="Close"
                 >
-                  Quickly Booking
+                  <FiX size={24} />
                 </button>
-              </div>
-            )}
 
-            {(selectedOption === "employee" || selectedOption === "partner") &&
-              renderCalendly()}
+                <h2 className="text-2xl font-bold text-center mb-8">
+                  How would you like to connect?
+                </h2>
+
+                <div className="space-y-4">
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full p-6 rounded-xl border-2 flex items-center justify-between transition-all ${
+                      selectedOption === "employee"
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-200 hover:border-blue-300"
+                    }`}
+                    onClick={() => handleOptionSelect("employee")}
+                  >
+                    <div className="flex items-center">
+                      <div className="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                        <FiUser size={24} />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="font-bold text-lg">Employee</h3>
+                        <p className="text-gray-600">
+                          Looking for job opportunities
+                        </p>
+                      </div>
+                    </div>
+                    <FiArrowRight className="text-gray-400" size={20} />
+                  </motion.button>
+
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`w-full p-6 rounded-xl border-2 flex items-center justify-between transition-all ${
+                      selectedOption === "partner"
+                        ? "border-green-500 bg-green-50"
+                        : "border-gray-200 hover:border-green-300"
+                    }`}
+                    onClick={() => handleOptionSelect("partner")}
+                  >
+                    <div className="flex items-center">
+                      <div className="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+                        <FiBriefcase size={24} />
+                      </div>
+                      <div className="text-left">
+                        <h3 className="font-bold text-lg">Partner</h3>
+                        <p className="text-gray-600">
+                          Explore business collaborations
+                        </p>
+                      </div>
+                    </div>
+                    <FiArrowRight className="text-gray-400" size={20} />
+                  </motion.button>
+                </div>
+              </motion.div>
+            ) : (
+              // Full-screen booking view
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                className={`absolute inset-0 ${
+                  selectedOption === "employee" ? "bg-blue-50" : "bg-green-50"
+                }`}
+                layout
+              >
+                <button
+                  onClick={() => {
+                    setShowBooking(false);
+                    setTimeout(() => setSelectedOption(null), 300);
+                  }}
+                  className="absolute top-4 right-4 z-10 bg-white p-2 rounded-full shadow-md hover:bg-gray-100"
+                  aria-label="Back"
+                >
+                  <FiX size={24} />
+                </button>
+
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="h-full w-full"
+                >
+                  {renderCalendly()}
+                </motion.div>
+              </motion.div>
+            )}
           </motion.div>
         </motion.div>
       )}

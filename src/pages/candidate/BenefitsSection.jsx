@@ -68,7 +68,7 @@ const BenefitsSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Why <span className="text-[#F37F21]">Candidates</span> Choose Us
+            Why <span className="text-[#F37F21]">Workers</span> Choose Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We've redefined the job search experience with candidate-first

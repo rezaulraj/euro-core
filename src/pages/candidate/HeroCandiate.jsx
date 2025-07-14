@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import heroImage from "../../assets/candidate/heroc.jpg";
-import partnerImage from "../../assets/candidate/candidiate.jpg"; // You should add a partners image
+import partnerImage from "../../assets/partner/partner.jpg"; // You should add a partners image
 import {
   FaHandshake,
   FaUsers,
