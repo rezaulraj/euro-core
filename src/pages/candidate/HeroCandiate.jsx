@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
 import heroImage from "../../assets/candidate/heroc.jpg";
-import candidateImage from "../../assets/candidate/candidiate.jpg";
-import { FaHandshake, FaArrowRight } from "react-icons/fa";
+import partnerImage from "../../assets/candidate/candidiate.jpg"; // You should add a partners image
+import {
+  FaHandshake,
+  FaUsers,
+  FaSearch,
+  FaLightbulb,
+  FaArrowRight,
+} from "react-icons/fa";
 
-// Import all client images
+// Import all client images (reusing the same ones from your example)
 import client1 from "../../assets/about/cl1.png?url";
 import client2 from "../../assets/about/cl2.png?url";
 import client3 from "../../assets/about/cl3.png?url";
@@ -13,7 +19,7 @@ import client6 from "../../assets/about/cl6.png?url";
 import client7 from "../../assets/about/cl7.png?url";
 import client8 from "../../assets/about/cl8.png?url";
 
-const HeroCandidate = () => {
+const WorkersPartners = () => {
   const clients = [
     client1,
     client2,
@@ -65,49 +71,49 @@ const HeroCandidate = () => {
             <div className="flex items-center gap-3 mb-6">
               <FaHandshake className="text-[#F37F21] text-3xl" />
               <span className="font-semibold bg-white/10 px-4 py-1 rounded-full">
-                Trusted by High-Growth Companies
+                WORKERS & PARTNERS
               </span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-[#F37F21]">Elevate</span> Your Career with
-              Confidence
+              <span className="text-[#F37F21]">Supporting</span> Workers &
+              Building Partnerships
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 max-w-lg opacity-90">
-              Connect with leading employers and secure your next opportunity
-              faster, with expert support.
+              We provide support to workers and we work with agencies to create
+              meaningful opportunities.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button
-                onClick={() => {
-                  const section = document.querySelector("#how-it-work");
-                  section?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                How It Works <FaArrowRight />
-              </button>
+            <div className="space-y-6 mb-12">
+              <div className="flex items-start gap-4 bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/20 transition">
+                <FaSearch className="text-[#F37F21] text-2xl mt-1" />
+                <div>
+                  <h3 className="font-bold text-lg">Job Search Assistance</h3>
+                  <p className="opacity-80">
+                    We can help with job search, offering multiple support
+                    models for workers.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 bg-white/10 p-4 rounded-xl backdrop-blur-sm hover:bg-white/20 transition">
+                <FaLightbulb className="text-[#F37F21] text-2xl mt-1" />
+                <div>
+                  <h3 className="font-bold text-lg">
+                    Partnership Opportunities
+                  </h3>
+                  <p className="opacity-80">
+                    We are always open to new partnerships and business ideas.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-md">
-              {[
-                { value: "10,000+", label: "Candidates Hired" },
-                { value: "80%", label: "Interview Success" },
-                { value: "4/5", label: "Candidate Satisfaction" },
-              ].map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 p-4 rounded-xl backdrop-blur-sm space-y-2 hover:bg-white/20 transition"
-                >
-                  <p className="text-2xl font-bold text-[#F37F21]">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm opacity-80">{stat.label}</p>
-                </div>
-              ))}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Contact Us <FaArrowRight />
+              </button>
             </div>
           </div>
 
@@ -115,13 +121,35 @@ const HeroCandidate = () => {
           <div className="lg:w-1/2 relative mt-12 lg:mt-0">
             <div className="relative w-full max-w-xl mx-auto overflow-hidden">
               <img
-                src={candidateImage}
-                alt="Successful candidate"
+                src={partnerImage}
+                alt="Partners meeting"
                 className="rounded-2xl border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
               />
 
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-[#F37F21] rounded-full opacity-10 -z-10"></div>
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-[#F37F21] rounded-full opacity-10 -z-10"></div>
+              {/* Floating info cards */}
+              <div className="absolute bottom-8 left-2 z-40 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-xs">
+                <div className="flex items-center gap-3">
+                  <FaUsers className="text-[#F37F21] text-xl" />
+                  <h4 className="font-bold text-gray-800">
+                    🤝 Partnership with agencies
+                  </h4>
+                </div>
+                <p className="text-sm mt-1 text-gray-600">
+                  Humble Hunters Partner Program
+                </p>
+              </div>
+
+              <div className="absolute top-8 right-2 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-xs">
+                <div className="flex items-center gap-3">
+                  <FaHandshake className="text-[#F37F21] text-xl" />
+                  <h4 className="font-bold text-gray-800">
+                    📃 Help and support for workers
+                  </h4>
+                </div>
+                <p className="text-sm mt-1 text-gray-600">
+                  Legal assistance and counseling
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -129,7 +157,7 @@ const HeroCandidate = () => {
         {/* Auto-scrolling clients */}
         <div className="mt-24 lg:mt-32 relative">
           <h3 className="text-center text-white text-xl mb-8 font-medium">
-            Trusted by leading companies worldwide
+            Our Valued Partners
           </h3>
 
           <div className="relative overflow-hidden py-4">
@@ -147,7 +175,7 @@ const HeroCandidate = () => {
                 >
                   <img
                     src={client}
-                    alt={`Client ${(index % clients.length) + 1}`}
+                    alt={`Partner ${(index % clients.length) + 1}`}
                     className="max-h-12 max-w-[120px] object-contain"
                   />
                 </div>
@@ -160,4 +188,4 @@ const HeroCandidate = () => {
   );
 };
 
-export default HeroCandidate;
+export default WorkersPartners;

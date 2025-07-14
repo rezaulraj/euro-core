@@ -8,6 +8,7 @@ import AboutPage from "./pages/about/AboutPage";
 import CandidatePage from "./pages/candidate/CandidatePage";
 import JoinUsPage from "./pages/joinus/JoinUsPage";
 import ServicePage from "./pages/service/ServicePage";
+import PartnerPage from "./pages/partner/PartnerPage";
 function App() {
   return (
     <>
@@ -16,7 +17,8 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="for-employers" element={<EmployeePage />} />
           <Route path="about-us" element={<AboutPage />} />
-          <Route path="for-candidates" element={<CandidatePage />} />
+          <Route path="what-we-offer" element={<CandidatePage />} />
+          <Route path="partnership" element={<PartnerPage />} />
           <Route path="join-us" element={<JoinUsPage />} />
           <Route path="industries" element={<ServicePage />} />
           <Route path="*" element={<NotFound />} />
