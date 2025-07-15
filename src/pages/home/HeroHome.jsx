@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "../../assets/home/herohome.webp";
 import {
@@ -8,8 +8,11 @@ import {
   FaChartLine,
   FaUserTie,
 } from "react-icons/fa";
+import ContactForm from "../../components/ContactForm";
 
 const HeroHome = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -155,19 +158,20 @@ const HeroHome = () => {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative cursor-pointer overflow-hidden group px-8 py-3 bg-[#F37F21] text-white rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                className="relative cursor-pointer overflow-hidden group px-8 py-3 bg-[#F37F21] text-white hover:text-gray-900 rounded-lg font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <FaSearch className="text-lg" />
                   <span>Discover Our Expertise</span>
                 </span>
-                <span className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+                <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
               </motion.button>
 
               <motion.button
                 onClick={() => {
-                  const section = document.querySelector("#contact");
-                  section?.scrollIntoView({ behavior: "smooth" });
+                  // const section = document.querySelector("#contact");
+                  // section?.scrollIntoView({ behavior: "smooth" });
+                  setShowContactForm(true);
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -241,6 +245,10 @@ const HeroHome = () => {
           </div>
         </motion.div> */}
       </div>
+      <ContactForm
+        show={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </div>
   );
 };

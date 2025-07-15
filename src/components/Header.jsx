@@ -91,7 +91,7 @@ const Header = () => {
     <>
       <header
         className={`fixed w-full z-50 transition-all duration-500 ${
-          scrolled ? "bg-white shadow-lg" : "bg-transparent"
+          scrolled ? "bg-white/80 backdrop-blur-xl shadow-sm" : "bg-transparent"
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -129,7 +129,7 @@ const Header = () => {
                   className={`flex items-center space-x-2 text-lg font-medium transition-all duration-300 ${
                     scrolled
                       ? "text-gray-800 hover:text-[#F37F21]"
-                      : "text-white hover:text-gray-200"
+                      : "text-white hover:text-[#F37F21]"
                   }`}
                 >
                   {item.icon}
@@ -161,7 +161,7 @@ const Header = () => {
           </nav>
 
           {/* Right Section */}
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-2">
             {/* Language Selector */}
             <div className="relative">
               <div
@@ -231,7 +231,7 @@ const Header = () => {
               }`}
             >
               <FaCalendarAlt className="text-xl" />
-              <span>Book Meeting</span>
+              <span>Book 1:1 Meeting</span>
             </button>
           </div>
         </div>
@@ -329,7 +329,7 @@ const Header = () => {
                 className="w-full mt-2 px-6 py-4 bg-[#00BCFF] text-white rounded-xl text-xl font-medium flex items-center justify-center space-x-3 hover:bg-blue-600 transition-colors duration-300"
               >
                 <FiMail className="text-2xl" />
-                <span>Contact Us</span>
+                <span>Book 1:1 Meeting</span>
               </button>
             </div>
           </div>

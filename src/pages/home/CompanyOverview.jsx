@@ -161,8 +161,8 @@ const CompanyOverview = () => {
               variants={item}
             >
               Your
-              <span className="text-[#F37F21]"> Premier </span>
-              Executive Search
+              <span className="text-[#F37F21]"> Trusted </span>
+              Manpower Supply
               <span className="text-[#F37F21]"> Partner</span>
             </motion.h2>
 

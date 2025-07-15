@@ -16,22 +16,28 @@ const HowWeWork = () => {
     {
       icon: <FaUserFriends className="text-2xl text-[#F37F21]" />,
       title: "Source",
-      description: "We identify top talent through targeted outreach and our global network.",
+      description:
+        "We identify top talent through targeted outreach and our global network.",
     },
     {
       icon: <FaComments className="text-2xl text-[#F37F21]" />,
       title: "Interview",
-      description: "We manage the entire interview process for speed and efficiency.",
+      description:
+        "We manage the entire interview process for speed and efficiency.",
     },
     {
       icon: <FaHandshake className="text-2xl text-[#F37F21]" />,
       title: "Hire & Support",
-      description: "We assist with offer negotiation and ensure smooth onboarding and retention.",
+      description:
+        "We assist with offer negotiation and ensure smooth onboarding and retention.",
     },
   ];
 
   return (
-    <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div
+      id="how-we-work"
+      className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       <div className="relative max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">

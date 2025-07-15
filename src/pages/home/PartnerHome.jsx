@@ -114,9 +114,9 @@ const PartnerHome = () => {
             variants={item}
             whileHover={{ scale: 1.01 }}
           >
-            Your Trusted Executive Search Partner
-            <br className="hidden lg:block" /> For{" "}
-            <span className="text-[#F37F21]">Digital Talent</span>
+            Your Reliable Partner for Quality
+            <br className="hidden lg:block" />
+            <span className="text-[#F37F21]"> Manpower Staffing </span>Solutions
           </motion.h1>
 
           <motion.p

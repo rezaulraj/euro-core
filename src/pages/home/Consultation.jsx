@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaPhoneAlt,
@@ -7,8 +7,11 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import bgimage from "../../assets/home/map.avif";
+import ContactForm from "../../components/ContactForm";
 
 const Consultation = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+
   // Animation variants
   const container = {
     hidden: { opacity: 0 },
@@ -170,8 +173,9 @@ const Consultation = () => {
             {/* CTA Button */}
             <motion.button
               onClick={() => {
-                const section = document.querySelector("#contact");
-                section?.scrollIntoView({ behavior: "smooth" });
+                // const section = document.querySelector("#contact");
+                // section?.scrollIntoView({ behavior: "smooth" });
+                setShowContactForm(true);
               }}
               className="inline-flex items-center justify-center px-8 py-4 bg-[#F37F21] text-white rounded-lg font-semibold hover:bg-[#F37F21] transition-all duration-300 hover:shadow-lg"
               whileHover={{ scale: 1.05 }}
@@ -196,6 +200,10 @@ const Consultation = () => {
         variants={floatDelay}
         initial="hidden"
         animate="animate"
+      />
+      <ContactForm
+        show={showContactForm}
+        onClose={() => setShowContactForm(false)}
       />
     </div>
   );
