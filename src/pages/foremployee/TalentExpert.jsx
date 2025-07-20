@@ -12,6 +12,7 @@ import {
   FaHandshake,
   FaCheck,
   FaTimes,
+  FaUsers,
 } from "react-icons/fa";
 
 const TalentExperts = () => {
@@ -21,6 +22,8 @@ const TalentExperts = () => {
     name: "",
     email: "",
     "hiring-needs": "",
+    "number-needed": 1, // New field for number of workers needed
+    "selected-industry": "", // New field for selected industry
     message: "",
   });
 
@@ -32,17 +35,25 @@ const TalentExperts = () => {
     }));
   };
 
+  const handleNumberChange = (e) => {
+    const value = Math.max(1, parseInt(e.target.value)); // Ensure minimum value is 1
+    setFormData((prev) => ({
+      ...prev,
+      "number-needed": value,
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
     setShowPopup(true);
-    // Reset form if needed
     setFormData({
       company: "",
       name: "",
       email: "",
       "hiring-needs": "",
+      "number-needed": 1,
+      "selected-industry": "",
       message: "",
     });
   };
@@ -50,6 +61,96 @@ const TalentExperts = () => {
   const closePopup = () => {
     setShowPopup(false);
   };
+
+  const categories = [
+    {
+      title: "Agriculture",
+    },
+    {
+      title: "Automotive / Car / Mechanic",
+    },
+    {
+      title: "Bakery",
+    },
+    {
+      title: "Base Metal / Metal Industry",
+    },
+    {
+      title: "Care Homes / Elderly Care",
+    },
+    {
+      title: "Food Production",
+    },
+    {
+      title: "Food Shop / Restaurant",
+    },
+    {
+      title: "Textile / Garment / Leather Industry",
+    },
+    {
+      title: "Car Wash & Servicing",
+    },
+    {
+      title: "Fruit Picking / Harvesting",
+    },
+    {
+      title: "Furniture / Wood Industry",
+    },
+    {
+      title: "Garage / Auto Workshop",
+    },
+    {
+      title: "Hotel / Resort / Hospitality",
+    },
+    {
+      title: "Cleaning Services",
+    },
+    {
+      title: "Construction",
+    },
+    {
+      title: "Machinery / Mechanical Industry",
+    },
+    {
+      title: "Forestry / Timber Industry",
+    },
+    {
+      title: "Manufacturing",
+    },
+    {
+      title: "Hairdressing / Salon",
+    },
+    {
+      title: "Oil Refinery",
+    },
+    {
+      title: "Packaging",
+    },
+    {
+      title: "Plastic Industry",
+    },
+    {
+      title: "Pet Care",
+    },
+    {
+      title: "Retail",
+    },
+    {
+      title: "Shipping / Shipyard / Marine",
+    },
+    {
+      title: "Warehouse / Logistics",
+    },
+    {
+      title: "Turnkey / Installation / Maintenance / Repair",
+    },
+    {
+      title: "Transport / Driver / Delivery / Logistics",
+    },
+    {
+      title: "Wellness & Spa Industry",
+    },
+  ];
 
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -312,13 +413,89 @@ const TalentExperts = () => {
                   />
                 </div>
 
+                {/* New Industry Selection Field */}
+                <div className="space-y-1">
+                  <label
+                    htmlFor="selected-industry"
+                    className="block text-gray-700 font-medium flex items-center"
+                  >
+                    <FaChartLine className="text-gray-400 mr-2 text-sm" />
+                    Select Industry
+                  </label>
+                  <select
+                    id="selected-industry"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition bg-white"
+                    value={formData["selected-industry"]}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select an industry</option>
+                    {categories.map((category, index) => (
+                      <option key={index} value={category.title}>
+                        {category.title}
+                      </option>
+                    ))}
+                    <option value="custom-recruitment">
+                      Custom Recruitment
+                    </option>
+                  </select>
+                </div>
+
+                {/* New Number of Workers Needed Field */}
+                <div className="space-y-1">
+                  <label
+                    htmlFor="number-needed"
+                    className="block text-gray-700 font-medium flex items-center"
+                  >
+                    <FaUsers className="text-gray-400 mr-2 text-sm" />
+                    Number of Workers Needed
+                  </label>
+                  <div className="flex items-center">
+                    <button
+                      type="button"
+                      className="bg-gray-200 px-3 py-2 rounded-l-lg"
+                      onClick={() =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          "number-needed": Math.max(
+                            1,
+                            prev["number-needed"] - 1
+                          ),
+                        }))
+                      }
+                    >
+                      -
+                    </button>
+                    <input
+                      type="number"
+                      id="number-needed"
+                      min="1"
+                      className="block w-full px-4 py-2 border-t border-b border-gray-300 text-center outline-none"
+                      value={formData["number-needed"]}
+                      onChange={handleNumberChange}
+                    />
+                    <button
+                      type="button"
+                      className="bg-gray-200 px-3 py-2 rounded-r-lg"
+                      onClick={() =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          "number-needed": prev["number-needed"] + 1,
+                        }))
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+
+                {/* Hiring Needs - modified to show job types */}
                 <div className="space-y-1">
                   <label
                     htmlFor="hiring-needs"
                     className="block text-gray-700 font-medium flex items-center"
                   >
                     <FaChartLine className="text-gray-400 mr-2 text-sm" />
-                    Hiring Needs
+                    Position Type
                   </label>
                   <select
                     id="hiring-needs"
@@ -327,15 +504,15 @@ const TalentExperts = () => {
                     value={formData["hiring-needs"]}
                     onChange={handleChange}
                   >
-                    <option value="">Select your hiring needs</option>
-                    <option value="executive">Executive/C-level</option>
-                    <option value="technical">Technical Specialists</option>
-                    <option value="professional">Professional Staff</option>
+                    <option value="">Select position type</option>
+                    <option value="full-time">Full-time</option>
+                    <option value="part-time">Part-time</option>
                     <option value="contract">Contract/Temporary</option>
-                    <option value="multiple">Multiple Positions</option>
+                    <option value="seasonal">Seasonal</option>
                   </select>
                 </div>
 
+                {/* Message field - same as before */}
                 <div className="space-y-1">
                   <label
                     htmlFor="message"

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import heroImage from "../../assets/candidate/heroc.jpg";
 import partnerImage from "../../assets/partner/partner.jpg"; // You should add a partners image
 import {
@@ -8,29 +8,10 @@ import {
   FaLightbulb,
   FaArrowRight,
 } from "react-icons/fa";
-
-// Import all client images (reusing the same ones from your example)
-import client1 from "../../assets/about/cl1.png?url";
-import client2 from "../../assets/about/cl2.png?url";
-import client3 from "../../assets/about/cl3.png?url";
-import client4 from "../../assets/about/cl4.png?url";
-import client5 from "../../assets/about/cl5.png?url";
-import client6 from "../../assets/about/cl6.png?url";
-import client7 from "../../assets/about/cl7.png?url";
-import client8 from "../../assets/about/cl8.png?url";
+import ContactForm from "../../components/ContactForm";
 
 const WorkersPartners = () => {
-  const clients = [
-    client1,
-    client2,
-    client3,
-    client4,
-    client5,
-    client6,
-    client7,
-    client8,
-  ];
-
+  const [showContactForm, setShowContactForm] = useState(false);
   // Auto-scrolling effect for clients
   useEffect(() => {
     const scrollContainer = document.querySelector(".client-scroll");
@@ -111,8 +92,23 @@ const WorkersPartners = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Contact Us <FaArrowRight />
+              <button
+                onClick={() => {
+                  const section = document.querySelector("#get-in-touch");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                  // setShowContactForm(true);
+                }}
+                className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+              >
+                Candidate <FaArrowRight />
+              </button>
+              <button
+                onClick={() => {
+                  setShowContactForm(true);
+                }}
+                className="flex items-center gap-2 text-[#F37F21] px-8 py-4 rounded-lg font-bold border-2 border-white transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+              >
+                PARTNERS <FaHandshake />
               </button>
             </div>
           </div>
@@ -153,37 +149,11 @@ const WorkersPartners = () => {
             </div>
           </div>
         </div>
-
-        {/* Auto-scrolling clients */}
-        <div className="mt-24 lg:mt-32 relative">
-          <h3 className="text-center text-white text-xl mb-8 font-medium">
-            Our Valued Partners
-          </h3>
-
-          <div className="relative overflow-hidden py-4">
-            {/* Gradient fade effect */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-900/70 to-transparent z-20"></div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-900/70 to-transparent z-20"></div>
-
-            {/* Infinite scrolling clients */}
-            <div className="client-scroll flex items-center gap-12 w-max bg-[#F37F21]/20">
-              {/* Double the array for seamless looping */}
-              {[...clients, ...clients].map((client, index) => (
-                <div
-                  key={index}
-                  className="w-32 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"
-                >
-                  <img
-                    src={client}
-                    alt={`Partner ${(index % clients.length) + 1}`}
-                    className="max-h-12 max-w-[120px] object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
+      <ContactForm
+        show={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </section>
   );
 };

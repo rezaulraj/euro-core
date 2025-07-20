@@ -82,11 +82,14 @@ const HeroAbout = () => {
             <span>Who We Are</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Partner with <span className="text-[#F37F21]">Euro Core</span> today
+            Connecting Employers, Workers, And Partners With{" "}
+            <span className="text-[#F37F21]">Euro Core</span>
           </h1>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Build a high-performing team tailored to your organization’s vision
-            and goals.
+            We work with employers, skilled workers, and trusted partners to
+            build strong and lasting connections. Our goal is to match the right
+            people with the right jobs while making the process smooth, honest,
+            and reliable for everyone involved.
           </p>
         </div>
 

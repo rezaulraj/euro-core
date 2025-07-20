@@ -9,6 +9,7 @@ import CandidatePage from "./pages/candidate/CandidatePage";
 import JoinUsPage from "./pages/joinus/JoinUsPage";
 import ServicePage from "./pages/service/ServicePage";
 import PartnerPage from "./pages/partner/PartnerPage";
+import TermsConditionPage from "./pages/tramandcondition/TermsConditionPage";
 function App() {
   return (
     <>
@@ -19,8 +20,9 @@ function App() {
           <Route path="about-us" element={<AboutPage />} />
           <Route path="what-we-offer" element={<CandidatePage />} />
           <Route path="partnership" element={<PartnerPage />} />
-          <Route path="join-us" element={<JoinUsPage />} />
+          <Route path="career" element={<JoinUsPage />} />
           <Route path="industries" element={<ServicePage />} />
+          <Route path="terms-and-conditions" element={<TermsConditionPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

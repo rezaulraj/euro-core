@@ -170,7 +170,10 @@ const ContactPartner = () => {
                       className="ml-2 text-sm text-gray-600"
                     >
                       I agree to the{" "}
-                      <a href="#" className="text-[#F37F21] hover:underline">
+                      <a
+                        href="/terms-and-conditions"
+                        className="text-[#F37F21] hover:underline"
+                      >
                         terms and conditions
                       </a>
                     </label>

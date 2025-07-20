@@ -66,7 +66,7 @@ const Header = () => {
     },
     {
       label: "Join Us",
-      path: "/join-us",
+      path: "/career",
       icon: <TbUsersPlus className="text-xl" />,
     },
   ];
@@ -121,7 +121,7 @@ const Header = () => {
           </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4 relative">
+          <nav className="hidden md:flex items-center space-x-6 relative">
             {navItems.map((item, idx) => (
               <div key={idx} className="relative group">
                 <a
@@ -326,7 +326,7 @@ const Header = () => {
                   setShowContactForm(true);
                   setMobileMenuOpen(false);
                 }}
-                className="w-full mt-2 px-6 py-4 bg-[#00BCFF] text-white rounded-xl text-xl font-medium flex items-center justify-center space-x-3 hover:bg-blue-600 transition-colors duration-300"
+                className="w-full mt-2 px-6 py-4 bg-[#F37F21] text-white rounded-xl text-xl font-medium flex items-center justify-center space-x-3 hover:bg-[#f38021e3] transition-colors duration-300"
               >
                 <FiMail className="text-2xl" />
                 <span>Book 1:1 Meeting</span>

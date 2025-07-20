@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import herojoin from "../../assets/join/heroj.webp";
 import join from "../../assets/join/join.jpeg";
+import CareerForm from "../../components/CareerForm";
 
 const HeroJoinUs = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
+  const handleContactSubmit = (formData) => {
+    console.log("Form submitted:", formData);
+  };
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden">
       {/* Background Hero Image with Gradient Overlay */}
@@ -29,17 +34,16 @@ const HeroJoinUs = () => {
             </h1>
 
             <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-lg">
-              Join a global team driving innovation in Euro Core solutions. Advance
-              your career while making a real impact.
+              Join a global team driving innovation in Euro Core solutions.
+              Advance your career while making a real impact.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => {
-                  const section = document.querySelector("#contact");
-                  section?.scrollIntoView({ behavior: "smooth" });
+                  setShowContactForm(true);
                 }}
-                className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
               >
                 Connect With Us
               </button>
@@ -48,9 +52,9 @@ const HeroJoinUs = () => {
                   const section = document.querySelector("#meet-team");
                   section?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg"
+                className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-all duration-300 hover:shadow-lg cursor-pointer"
               >
-                Meet Our Team
+                Join our Team
               </button>
             </div>
 
@@ -73,7 +77,7 @@ const HeroJoinUs = () => {
               ))}
             </div>
           </div>
- 
+
           {/* Right: Team Image with Floating Effect */}
           <div className="lg:w-1/2 relative mt-12 lg:mt-0">
             <div className="relative w-full max-w-xl mx-auto">
@@ -90,6 +94,11 @@ const HeroJoinUs = () => {
           </div>
         </div>
       </div>
+      <CareerForm
+        show={showContactForm}
+        onClose={() => setShowContactForm(false)}
+        onSubmit={handleContactSubmit}
+      />
     </section>
   );
 };

@@ -258,7 +258,7 @@ const ContactPageCandidate = () => {
                   </div>
 
                   {/* Motivation Letter Upload */}
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                  {/* <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <label className="cursor-pointer">
                       <div className="flex flex-col items-center justify-center">
                         <FaFileAlt className="text-3xl text-[#F37F21] mb-2" />
@@ -279,7 +279,7 @@ const ContactPageCandidate = () => {
                         accept=".pdf,.doc,.docx"
                       />
                     </label>
-                  </div>
+                  </div> */}
 
                   {/* Submit Button */}
                   <div>
@@ -393,7 +393,7 @@ const ContactPageCandidate = () => {
                   href="https://www.linkedin.com/company/107980266/admin/dashboard/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#F37F21] hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaLinkedin className="text-xl" />
                 </a>
@@ -421,14 +421,14 @@ const ContactPageCandidate = () => {
                 >
                   <FaInstagram className="text-xl" />
                 </a>
-                <a
+                {/* <a
                   href="https://www.tiktok.com/@cloudkonektion"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaTiktok className="text-xl" />
-                </a>
+                </a> */}
                 <a
                   href="https://www.youtube.com/@cloudkonektion0"
                   target="_blank"
@@ -437,14 +437,14 @@ const ContactPageCandidate = () => {
                 >
                   <FaYoutube className="text-xl" />
                 </a>
-                <a
+                {/* <a
                   href="https://www.pinterest.com/cloudkonektion/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
                 >
                   <FaPinterest className="text-xl" />
-                </a>
+                </a> */}
               </div>
             </div>
 

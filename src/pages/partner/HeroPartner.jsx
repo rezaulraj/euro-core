@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import {
   FaHandshake,
   FaGlobe,
@@ -8,46 +8,10 @@ import {
 } from "react-icons/fa";
 import heroPartner from "../../assets/partner/heropartner.jpg";
 
-// Import all client images
-import client1 from "../../assets/about/cl1.png?url";
-import client2 from "../../assets/about/cl2.png?url";
-import client3 from "../../assets/about/cl3.png?url";
-import client4 from "../../assets/about/cl4.png?url";
-import client5 from "../../assets/about/cl5.png?url";
-import client6 from "../../assets/about/cl6.png?url";
-import client7 from "../../assets/about/cl7.png?url";
-import client8 from "../../assets/about/cl8.png?url";
+import ContactForm from "../../components/ContactForm";
 
 const HeroPartner = () => {
-  const clients = [
-    client1,
-    client2,
-    client3,
-    client4,
-    client5,
-    client6,
-    client7,
-    client8,
-  ];
-
-  useEffect(() => {
-    const scrollContainer = document.querySelector(".client-scroll");
-    if (scrollContainer) {
-      let scrollAmount = 0;
-      const scrollSpeed = 1;
-
-      const scroll = () => {
-        scrollAmount += scrollSpeed;
-        if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-          scrollAmount = 0;
-        }
-        scrollContainer.scrollLeft = scrollAmount;
-      };
-
-      const scrollInterval = setInterval(scroll, 20);
-      return () => clearInterval(scrollInterval);
-    }
-  }, []);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center">
@@ -74,7 +38,7 @@ const HeroPartner = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-[#F37F21]">Join</span> the Humble Partners
+              <span className="text-[#F37F21]">Join</span> the EuroCore Partners
               Program
             </h1>
 
@@ -112,11 +76,15 @@ const HeroPartner = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex items-center gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <button
+                onClick={() => {
+                  // const section = document.querySelector("#contact");
+                  // section?.scrollIntoView({ behavior: "smooth" });
+                  setShowContactForm(true);
+                }}
+                className="flex items-center gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
                 Become a Partner <FaArrowRight />
-              </button>
-              <button className="flex items-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-bold border border-white/30 transition-all duration-300">
-                Learn More
               </button>
             </div>
           </div>
@@ -173,36 +141,11 @@ const HeroPartner = () => {
             </div>
           </div>
         </div>
-
-        {/* Auto-scrolling clients */}
-        <div className="mt-24 lg:mt-32 relative">
-          <h3 className="text-center text-white text-xl mb-8 font-medium">
-            Trusted by industry leaders worldwide
-          </h3>
-
-          <div className="relative overflow-hidden py-4">
-            {/* Gradient fade effect */}
-            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-gray-900/70 to-transparent z-20"></div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-900/70 to-transparent z-20"></div>
-
-            {/* Infinite scrolling clients */}
-            <div className="client-scroll flex items-center gap-12 w-max">
-              {[...clients, ...clients].map((client, index) => (
-                <div
-                  key={index}
-                  className="w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110 bg-white/5 backdrop-blur-sm p-4 rounded-lg"
-                >
-                  <img
-                    src={client}
-                    alt={`Client ${(index % clients.length) + 1}`}
-                    className="max-h-12 max-w-[140px] object-contain"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
+      <ContactForm
+        show={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </section>
   );
 };

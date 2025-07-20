@@ -40,18 +40,18 @@ const DigitalDisruption = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              <span className="text-[#F37F21]">Spearheading</span> Digital
-              Disruption
+              <span className="text-[#F37F21]">Spearheading</span> Talent
+              Innovation at Scale
             </h2>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              At Euro Core Hired, we’re a team of passionate professionals
-              and industry veterans dedicated to helping businesses find the
-              right talent to fuel their growth and success. Founded in 2015 by
-              a group of experienced leaders with decades of combined expertise
-              in recruitment and organizational development, Euro Core
-              Hired has been a trusted name in executive and specialist hiring
-              from the very beginning.
+              At Euro Core Hired, we’re a team of passionate professionals and
+              industry veterans dedicated to helping businesses find the right
+              talent to fuel their growth and success. Founded in 2015 by a
+              group of experienced leaders with decades of combined expertise in
+              recruitment and organizational development, Euro Core Hired has
+              been a trusted name in executive and specialist hiring from the
+              very beginning.
             </p>
 
             {/* Stats Grid */}
