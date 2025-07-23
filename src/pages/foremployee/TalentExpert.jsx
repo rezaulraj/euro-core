@@ -536,7 +536,6 @@ const TalentExperts = () => {
                   className="w-full bg-gradient-to-r from-[#F37F21] to-[#F37F21] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
                 >
                   <span>Request Talent Consultation</span>
-                  <FaSearch className="ml-2" />
                 </button>
               </form>
             </div>

@@ -65,7 +65,7 @@ const Header = () => {
       icon: <HiOutlineInformationCircle className="text-xl" />,
     },
     {
-      label: "Join Us",
+      label: "Career",
       path: "/career",
       icon: <TbUsersPlus className="text-xl" />,
     },
@@ -126,7 +126,7 @@ const Header = () => {
               <div key={idx} className="relative group">
                 <a
                   href={item.path || "#"}
-                  className={`flex items-center space-x-2 text-lg font-medium transition-all duration-300 ${
+                  className={`flex items-center space-x-1 text-lg font-medium transition-all duration-300 ${
                     scrolled
                       ? "text-gray-800 hover:text-[#F37F21]"
                       : "text-white hover:text-[#F37F21]"
@@ -226,8 +226,8 @@ const Header = () => {
               onClick={() => setShowContactForm(true)}
               className={`flex items-center space-x-2 px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 ${
                 scrolled
-                  ? "bg-[#123B65] text-white hover:bg-[#f38021f5] hover:shadow-lg"
-                  : "bg-[#123B65] text-white hover:bg-[#f38021f5] hover:shadow-lg"
+                  ? "bg-[#f38021f5] text-white hover:bg-[#123B65] hover:shadow-lg"
+                  : "bg-[#f38021f5] text-white hover:bg-[#123B65] hover:shadow-lg"
               }`}
             >
               <FaCalendarAlt className="text-xl" />
@@ -262,7 +262,7 @@ const Header = () => {
                       {item.subNav && (
                         <button
                           onClick={() => toggleMobileSubmenu(idx)}
-                          className="p-2 text-gray-500"
+                          className="p-2 text-gray-800"
                         >
                           <FiChevronDown
                             className={`transition-transform ${
@@ -274,12 +274,12 @@ const Header = () => {
                     </div>
 
                     {item.subNav && mobileSubmenuOpen === idx && (
-                      <div className="ml-8 bg-gray-50 rounded-lg my-1">
+                      <div className=" bg-gray-50 rounded-lg my-1">
                         {item.subNav.map((sub, subIdx) => (
                           <a
                             key={subIdx}
                             href={sub.path}
-                            className="flex items-center space-x-3 px-4 py-3 text-gray-700 hover:bg-gray-100 transition-colors duration-200 text-lg"
+                            className="flex items-center space-x-3 py-3 text-gray-800 hover:bg-[#f38021f5] font-medium duration-200 text-lg"
                             onClick={() => setMobileMenuOpen(false)}
                           >
                             {sub.icons}
@@ -326,7 +326,7 @@ const Header = () => {
                   setShowContactForm(true);
                   setMobileMenuOpen(false);
                 }}
-                className="w-full mt-2 px-6 py-4 bg-[#F37F21] text-white rounded-xl text-xl font-medium flex items-center justify-center space-x-3 hover:bg-[#f38021e3] transition-colors duration-300"
+                className="w-full mt-2 px-6 py-4 bg-[#F37F21] hover:bg-[#123B65] text-white rounded-xl text-xl font-medium flex items-center justify-center space-x-3 cursor-pointer transition-colors duration-300"
               >
                 <FiMail className="text-2xl" />
                 <span>Book 1:1 Meeting</span>

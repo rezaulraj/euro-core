@@ -84,7 +84,7 @@ const HeroJoinUs = () => {
               <img
                 src={join}
                 alt="Happy team members"
-                className="rounded-2xl border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
+                className="rounded-2xl w-full h-full border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
               />
 
               {/* Decorative Elements */}
