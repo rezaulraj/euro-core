@@ -117,7 +117,7 @@ const HowItWorks = () => {
                     const section = document.querySelector("#get-in-touch");
                     section?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
                 >
                   <GiProgression className="text-xl" />
                   <span>Start Your Journey Now</span>

@@ -79,7 +79,7 @@ const ContactForm = ({ show, onClose }) => {
               >
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+                  className="absolute top-4 right-4 text-gray-400 cursor-pointer hover:text-gray-600"
                   aria-label="Close"
                 >
                   <FiX size={24} />
@@ -93,7 +93,7 @@ const ContactForm = ({ show, onClose }) => {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full p-6 rounded-xl border-2 flex items-center justify-between transition-all ${
+                    className={`w-full p-6 rounded-xl border-2 cursor-pointer flex items-center justify-between transition-all ${
                       selectedOption === "employee"
                         ? "border-blue-500 bg-blue-50"
                         : "border-gray-200 hover:border-blue-300"
@@ -117,7 +117,7 @@ const ContactForm = ({ show, onClose }) => {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`w-full p-6 rounded-xl border-2 flex items-center justify-between transition-all ${
+                    className={`w-full p-6 rounded-xl cursor-pointer border-2 flex items-center justify-between transition-all ${
                       selectedOption === "partner"
                         ? "border-green-500 bg-green-50"
                         : "border-gray-200 hover:border-green-300"

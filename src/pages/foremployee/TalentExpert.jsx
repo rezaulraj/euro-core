@@ -424,7 +424,7 @@ const TalentExperts = () => {
                   </label>
                   <select
                     id="selected-industry"
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition bg-white"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition bg-white"
                     value={formData["selected-industry"]}
                     onChange={handleChange}
                   >
@@ -452,7 +452,7 @@ const TalentExperts = () => {
                   <div className="flex items-center">
                     <button
                       type="button"
-                      className="bg-gray-200 px-3 py-2 rounded-l-lg"
+                      className="bg-[#F37F21] text-white px-3 py-2 rounded-l-lg"
                       onClick={() =>
                         setFormData((prev) => ({
                           ...prev,
@@ -469,13 +469,13 @@ const TalentExperts = () => {
                       type="number"
                       id="number-needed"
                       min="1"
-                      className="block w-full px-4 py-2 border-t border-b border-gray-300 text-center outline-none"
+                      className="block w-full px-4 py-2 border-t border-b border-gray-300 text-center focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                       value={formData["number-needed"]}
                       onChange={handleNumberChange}
                     />
                     <button
                       type="button"
-                      className="bg-gray-200 px-3 py-2 rounded-r-lg"
+                      className="bg-[#F37F21] text-white px-3 py-2 rounded-r-lg"
                       onClick={() =>
                         setFormData((prev) => ({
                           ...prev,
@@ -499,7 +499,7 @@ const TalentExperts = () => {
                   </label>
                   <select
                     id="hiring-needs"
-                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#00BCFF] focus:border-[#00BCFF] outline-none transition bg-white"
+                    className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition bg-white"
                     required
                     value={formData["hiring-needs"]}
                     onChange={handleChange}
@@ -533,7 +533,7 @@ const TalentExperts = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#F37F21] to-[#F37F21] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center"
+                  className="w-full bg-gradient-to-r from-[#F37F21] to-[#F37F21] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center cursor-pointer"
                 >
                   <span>Request Talent Consultation</span>
                 </button>

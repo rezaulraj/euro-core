@@ -163,7 +163,7 @@ const ContactPageCandidate = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21]"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                       placeholder="Your Name"
                       required
                     />
@@ -179,7 +179,7 @@ const ContactPageCandidate = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21]"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                       placeholder="Email Address"
                       required
                     />
@@ -195,7 +195,7 @@ const ContactPageCandidate = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21]"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                       placeholder="Phone Number (Optional)"
                     />
                   </div>
@@ -209,7 +209,7 @@ const ContactPageCandidate = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] appearance-none bg-white"
+                      className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition appearance-none bg-white"
                       required
                     >
                       <option value="">Select Subject</option>
@@ -226,7 +226,7 @@ const ContactPageCandidate = () => {
                       value={formData.message}
                       onChange={handleChange}
                       rows="4"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21]"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                       placeholder="Your Message"
                       required
                     ></textarea>
@@ -286,7 +286,7 @@ const ContactPageCandidate = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full flex justify-center items-center px-6 py-4 bg-[#F37F21] text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-[#F37F21] focus:ring-offset-2 transition-all ${
+                      className={`w-full flex justify-center items-center px-6 py-4 bg-[#F37F21] text-white font-medium rounded-lg hover:bg-[#F37F21]/80 focus:outline-none focus:ring-2 focus:ring-[#F37F21] focus:ring-offset-2 transition-all cursor-pointer ${
                         isSubmitting ? "opacity-70 cursor-not-allowed" : ""
                       }`}
                     >

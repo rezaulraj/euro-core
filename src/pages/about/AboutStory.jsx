@@ -73,7 +73,7 @@ const AboutStory = () => {
                 const section = document.querySelector("#contact");
                 section?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center px-6 py-3 bg-[#F37F21] text-white rounded-lg font-semibold hover:bg-[#123B65] transition-colors mt-4"
+              className="inline-flex items-center px-6 py-3 bg-[#F37F21] text-white rounded-lg font-semibold hover:bg-[#123B65] transition-colors mt-4 cursor-pointer"
             >
               <FaSearch className="mr-3" />
               Learn more about our processes

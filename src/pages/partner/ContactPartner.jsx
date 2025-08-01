@@ -52,7 +52,7 @@ const ContactPartner = () => {
                         <input
                           type="text"
                           id="name"
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-transparent"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                           placeholder="John Smith"
                         />
                       </div>
@@ -72,7 +72,7 @@ const ContactPartner = () => {
                         <input
                           type="text"
                           id="company"
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-transparent"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                           placeholder="Acme Inc."
                         />
                       </div>
@@ -92,7 +92,7 @@ const ContactPartner = () => {
                         <input
                           type="email"
                           id="email"
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-transparent"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                           placeholder="john@example.com"
                         />
                       </div>
@@ -112,7 +112,7 @@ const ContactPartner = () => {
                         <input
                           type="tel"
                           id="phone"
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-transparent"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                           placeholder="+1 (555) 123-4567"
                         />
                       </div>
@@ -131,7 +131,7 @@ const ContactPartner = () => {
                         </div>
                         <select
                           id="country"
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-transparent appearance-none bg-white"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition appearance-none bg-white"
                         >
                           <option>Select your country</option>
                           <option>United States</option>
@@ -153,7 +153,7 @@ const ContactPartner = () => {
                       <textarea
                         id="message"
                         rows="4"
-                        className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-transparent"
+                        className="block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                         placeholder="Tell us about your partnership interests and how we can work together..."
                       ></textarea>
                     </div>
@@ -181,7 +181,7 @@ const ContactPartner = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#F37F21] hover:bg-[#E5711A] text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center"
+                    className="w-full bg-[#F37F21] hover:bg-[#E5711A] text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center cursor-pointer"
                   >
                     <FaHandshake className="mr-2" />
                     Submit Partnership Request

@@ -40,7 +40,7 @@ const HeroEmployee = () => {
             onClick={() => {
               setShowContactForm(true);
             }}
-            className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg shadow-lg"
+            className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}

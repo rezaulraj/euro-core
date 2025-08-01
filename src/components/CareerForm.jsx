@@ -103,7 +103,7 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                         name="name"
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                         required
                       />
                     </div>
@@ -122,7 +122,7 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                         required
                       />
                     </div>
@@ -141,7 +141,7 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                         required
                       />
                     </div>
@@ -164,7 +164,7 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                           className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
                           accept=".pdf,.doc,.docx"
                         />
-                        <div className="flex items-center justify-between px-4 py-3 border border-gray-300 rounded-lg hover:border-blue-500 transition">
+                        <div className="flex items-center justify-between px-4 py-3 border border-gray-300 rounded-lg hover:border-[#F37F21] transition">
                           <span className="text-gray-500 truncate">
                             {formData.cv ? formData.cv.name : "Choose file..."}
                           </span>
@@ -175,7 +175,7 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                         <button
                           type="button"
                           onClick={removeFile}
-                          className="mt-2 text-sm text-red-500 hover:text-red-700 flex items-center"
+                          className="mt-2 text-sm text-[#F37F21] hover:text-[#F37F21]/90 flex items-center"
                         >
                           <FiX className="mr-1" /> Remove file
                         </button>
@@ -196,7 +196,7 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                         value={formData.message}
                         onChange={handleInputChange}
                         rows="4"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#F37F21] focus:border-[#F37F21] outline-none transition"
                         required
                       ></textarea>
                     </div>
@@ -205,14 +205,14 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                   <div className="mt-8 flex space-x-4">
                     <button
                       type="submit"
-                      className="flex-1 bg-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg"
+                      className="flex-1 cursor-pointer bg-[#F37F21] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#F37F21]/90 transition-colors shadow-md hover:shadow-lg"
                     >
                       Submit
                     </button>
                     <button
                       type="button"
                       onClick={onClose}
-                      className="flex-1 bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
+                      className="flex-1 cursor-pointer bg-gray-100 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
                     >
                       Cancel
                     </button>

@@ -201,7 +201,7 @@ const Header = () => {
                   {languages.map((language) => (
                     <button
                       key={language.code}
-                      className={`w-full text-left px-4 py-3 text-lg flex items-center space-x-3 transition-colors duration-200 ${
+                      className={`w-full text-left px-4 py-3 text-lg flex items-center space-x-3 transition-colors duration-200 cursor-pointer ${
                         selectedLanguage === language.code
                           ? "bg-[#F37F21]/10 text-[#F37F21]"
                           : "text-gray-700 hover:bg-gray-50"
@@ -224,7 +224,7 @@ const Header = () => {
             {/* Contact Button */}
             <button
               onClick={() => setShowContactForm(true)}
-              className={`flex items-center space-x-2 px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 ${
+              className={`flex items-center space-x-2 px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 cursor-pointer ${
                 scrolled
                   ? "bg-[#f38021f5] text-white hover:bg-[#123B65] hover:shadow-lg"
                   : "bg-[#f38021f5] text-white hover:bg-[#123B65] hover:shadow-lg"
