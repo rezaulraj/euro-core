@@ -14,6 +14,7 @@ import ContactForm from "./ContactForm";
 import logo2 from "/eurocore-logo.png?url";
 import logo3 from "/eurocore-Dark-BG-logo.png?url";
 import { FaCalendarAlt, FaHandsHelping } from "react-icons/fa";
+import { FaUsersBetweenLines } from "react-icons/fa6";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -56,6 +57,11 @@ const Header = () => {
           label: "Partnership",
           icons: <FaHandsHelping className="text-white" />,
           path: "/partnership",
+        },
+        {
+          label: "Candidate",
+          icons: <FaUsersBetweenLines className="text-white" />,
+          path: "/candidate",
         },
       ],
     },

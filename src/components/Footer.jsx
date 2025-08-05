@@ -28,6 +28,7 @@ const Footer = () => {
     { name: "Partner", href: "/partnership" },
     { name: "About Us", href: "/about-us" },
     { name: "Join Us", href: "/career" },
+    { name: "Blogs", href: "/blogs" },
   ];
 
   const services = [
