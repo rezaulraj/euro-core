@@ -1,5 +1,5 @@
 import React from "react";
-import heroImage from "../../assets/candidate/herocandiate.png?url";
+import heroImage from "../../assets/candidate/candiate.webp?url";
 import {
   FiUser,
   FiBriefcase,
@@ -17,7 +17,7 @@ const CandiateHeroPage = () => {
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-purple-900/60"></div>
+        <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
       {/* Hero content */}
