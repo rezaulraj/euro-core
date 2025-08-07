@@ -11,6 +11,7 @@ import ServicePage from "./pages/service/ServicePage";
 import PartnerPage from "./pages/partner/PartnerPage";
 import TermsConditionPage from "./pages/tramandcondition/TermsConditionPage";
 import BlogPage from "./pages/blog/BlogPage";
+import Candidate from "./pages/candiaete/Candidate";
 function App() {
   return (
     <>
@@ -21,6 +22,7 @@ function App() {
           <Route path="about-us" element={<AboutPage />} />
           <Route path="what-we-offer" element={<CandidatePage />} />
           <Route path="partnership" element={<PartnerPage />} />
+          <Route path="candidate" element={<Candidate />} />
           <Route path="career" element={<JoinUsPage />} />
           <Route path="industries" element={<ServicePage />} />
           <Route path="terms-and-conditions" element={<TermsConditionPage />} />

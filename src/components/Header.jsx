@@ -15,14 +15,17 @@ import logo2 from "/eurocore-logo.png?url";
 import logo3 from "/eurocore-Dark-BG-logo.png?url";
 import { FaCalendarAlt, FaHandsHelping } from "react-icons/fa";
 import { FaUsersBetweenLines } from "react-icons/fa6";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("US");
   const [isHoveringLanguage, setIsHoveringLanguage] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
+  const [activeNavItem, setActiveNavItem] = useState("");
 
   const languages = [
     { code: "US", name: "English", countryCode: "US" },
@@ -85,12 +88,32 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Set active nav item based on current route
+  useEffect(() => {
+    const currentPath = location.pathname;
+    const activeItem = navItems.find(
+      (item) =>
+        item.path === currentPath ||
+        (item.subNav &&
+          item.subNav.some((subItem) => subItem.path === currentPath))
+    );
+    setActiveNavItem(activeItem?.label || "");
+  }, [location.pathname]);
+
   const handleContactSubmit = (formData) => {
     console.log("Form submitted:", formData);
   };
 
   const toggleMobileSubmenu = (index) => {
     setMobileSubmenuOpen(mobileSubmenuOpen === index ? null : index);
+  };
+
+  const isNavItemActive = (item) => {
+    return (
+      activeNavItem === item.label ||
+      (item.subNav &&
+        item.subNav.some((subItem) => subItem.path === location.pathname))
+    );
   };
 
   return (
@@ -134,9 +157,14 @@ const Header = () => {
                   href={item.path || "#"}
                   className={`flex items-center space-x-1 text-lg font-medium transition-all duration-300 ${
                     scrolled
-                      ? "text-gray-800 hover:text-[#F37F21]"
+                      ? isNavItemActive(item)
+                        ? "text-[#F37F21]"
+                        : "text-gray-800 hover:text-[#F37F21]"
+                      : isNavItemActive(item)
+                      ? "text-[#F37F21]"
                       : "text-white hover:text-[#F37F21]"
                   }`}
+                  onClick={() => setActiveNavItem(item.label)}
                 >
                   {item.icon}
                   <span>{item.label}</span>
@@ -152,7 +180,11 @@ const Header = () => {
                         <li key={subIdx}>
                           <a
                             href={sub.path}
-                            className="flex items-center space-x-3 px-4 py-2 text-gray-100 hover:bg-[#123b65da] text-lg font-medium hover:text-[#F37F21] transition-colors duration-200"
+                            className={`flex items-center space-x-3 px-4 py-2 text-gray-100 hover:bg-[#123b65da] text-lg font-medium hover:text-[#F37F21] transition-colors duration-200 ${
+                              location.pathname === sub.path
+                                ? "text-[#F37F21]"
+                                : ""
+                            }`}
                           >
                             {sub.icons}
                             <span>{sub.label}</span>
@@ -252,13 +284,18 @@ const Header = () => {
                     <div className="flex justify-between items-center">
                       <a
                         href={item.path || "#"}
-                        className="flex items-center space-x-4 text-lg font-medium text-gray-800 py-2 border-b border-gray-100 hover:text-[#F37F21] transition-colors duration-300 w-full"
+                        className={`flex items-center space-x-4 text-lg font-medium py-2 border-b border-gray-100 transition-colors duration-300 w-full ${
+                          isNavItemActive(item)
+                            ? "text-[#F37F21]"
+                            : "text-gray-800 hover:text-[#F37F21]"
+                        }`}
                         onClick={(e) => {
                           if (item.subNav) {
                             e.preventDefault();
                             toggleMobileSubmenu(idx);
                           } else {
                             setMobileMenuOpen(false);
+                            setActiveNavItem(item.label);
                           }
                         }}
                       >
@@ -280,13 +317,20 @@ const Header = () => {
                     </div>
 
                     {item.subNav && mobileSubmenuOpen === idx && (
-                      <div className=" bg-gray-50 rounded-lg my-1">
+                      <div className="bg-gray-50 rounded-lg my-1">
                         {item.subNav.map((sub, subIdx) => (
                           <a
                             key={subIdx}
                             href={sub.path}
-                            className="flex items-center space-x-3 py-3 text-gray-800 hover:bg-[#f38021f5] font-medium duration-200 text-lg"
-                            onClick={() => setMobileMenuOpen(false)}
+                            className={`flex items-center space-x-3 py-3 font-medium duration-200 text-lg ${
+                              location.pathname === sub.path
+                                ? "text-[#F37F21]"
+                                : "text-gray-800 hover:text-[#F37F21]"
+                            }`}
+                            onClick={() => {
+                              setMobileMenuOpen(false);
+                              setActiveNavItem(item.label);
+                            }}
                           >
                             {sub.icons}
                             <span>{sub.label}</span>
