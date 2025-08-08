@@ -29,7 +29,7 @@ const HeroBlog = () => {
           {/* Transparent Explore How It Works Button */}
           <motion.button
             onClick={() => {
-              const section = document.querySelector("#how-we-work");
+              const section = document.querySelector("#news-feed");
               section?.scrollIntoView({ behavior: "smooth" });
             }}
             className="group relative overflow-hidden px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white/30 hover:border-white/50 backdrop-blur-sm"

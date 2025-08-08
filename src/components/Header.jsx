@@ -16,6 +16,7 @@ import logo3 from "/eurocore-Dark-BG-logo.png?url";
 import { FaCalendarAlt, FaHandsHelping } from "react-icons/fa";
 import { FaUsersBetweenLines } from "react-icons/fa6";
 import { useLocation } from "react-router-dom";
+import InfinityTextSlider from "./InfinityTextSlider";
 
 const Header = () => {
   const location = useLocation();
@@ -26,7 +27,9 @@ const Header = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
   const [activeNavItem, setActiveNavItem] = useState("");
-
+  const [scrollingDown, setScrollingDown] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const languages = [
     { code: "US", name: "English", countryCode: "US" },
     // { code: "MT", name: "Malta", countryCode: "MT" },
@@ -100,6 +103,25 @@ const Header = () => {
     setActiveNavItem(activeItem?.label || "");
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setAtTop(currentScrollY <= 0);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setScrollingDown(true);
+      } else if (currentScrollY < lastScrollY) {
+        setScrollingDown(false);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   const handleContactSubmit = (formData) => {
     console.log("Form submitted:", formData);
   };
@@ -123,6 +145,11 @@ const Header = () => {
           scrolled ? "bg-white/80 backdrop-blur-xl shadow-sm" : "bg-transparent"
         }`}
       >
+        {atTop && (
+          <div className="bg-blue-dark w-full">
+            <InfinityTextSlider atTop={atTop} />
+          </div>
+        )}
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           {/* Logo */}
           <a href="/">

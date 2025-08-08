@@ -54,3 +54,23 @@
 .animate-bounce {
   animation: bounce 1.5s infinite;
 }
+
+/* infinity text slider */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* apply the scrolling animation */
+.slider-track {
+  animation: scroll 8s linear infinite;
+}
+
+/* pause when you hover anywhere over the track */
+.slider-track:hover {
+  animation-play-state: paused;
+}
