@@ -1,7 +1,7 @@
 import React from "react";
 import HeroHome from "./HeroHome";
 import ClientHome from "./ClientHome";
-import CompanyOverview from "./CompanyOverview";
+import EmployerRecruitment from "./EmployerRecruitment";
 import PartnerHome from "./PartnerHome";
 import AreaExpertise from "./AreaExpertise";
 import Consultation from "./Consultation";
@@ -14,9 +14,9 @@ const HomePage = () => {
     <div className="min-h-screen">
       <HeroHome />
       <ClientHome />
-      <CompanyOverview />
-      <PartnerHome />
+      <EmployerRecruitment />
       <AreaExpertise />
+      <PartnerHome />
       <Consultation />
       <WhyCloudeKonektion />
       <OurPartner />

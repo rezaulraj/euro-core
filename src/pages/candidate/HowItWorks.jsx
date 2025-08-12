@@ -49,12 +49,12 @@ const HowItWorks = () => {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-600 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center gap-2 bg-blue-100 text-[#F37F21] px-4 py-2 rounded-full mb-4">
             <FaRocket className="animate-pulse" />
             <span className="font-medium">Get Hired Faster</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            How Our <span className="text-blue-600">Process Works</span>
+            How Our <span className="text-[#F37F21]">Process Works</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Simple steps to transform your career with our powerful platform

@@ -393,7 +393,7 @@ const ContactPageCandidate = () => {
                   href="https://www.linkedin.com/company/107980266/admin/dashboard/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#F37F21] hover:bg-blue-200 transition-colors"
                 >
                   <FaLinkedin className="text-xl" />
                 </a>
@@ -401,7 +401,7 @@ const ContactPageCandidate = () => {
                   href="https://x.com/cloudkonektion"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#F37F21] hover:bg-blue-200 transition-colors"
                 >
                   <FaXTwitter className="text-xl" />
                 </a>
@@ -409,7 +409,7 @@ const ContactPageCandidate = () => {
                   href="https://www.facebook.com/cloudkonektion/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#F37F21] hover:bg-blue-200 transition-colors"
                 >
                   <FaFacebook className="text-xl" />
                 </a>
@@ -417,7 +417,7 @@ const ContactPageCandidate = () => {
                   href="https://www.instagram.com/cloudkonektion/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#F37F21] hover:bg-blue-200 transition-colors"
                 >
                   <FaInstagram className="text-xl" />
                 </a>
@@ -433,7 +433,7 @@ const ContactPageCandidate = () => {
                   href="https://www.youtube.com/@cloudkonektion0"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors"
+                  className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-[#F37F21] hover:bg-blue-200 transition-colors"
                 >
                   <FaYoutube className="text-xl" />
                 </a>

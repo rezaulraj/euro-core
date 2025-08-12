@@ -32,7 +32,7 @@ const DotPattern = () => (
   </motion.svg>
 );
 
-const CompanyOverview = () => {
+const IndustryLeader = () => {
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
@@ -170,7 +170,7 @@ const CompanyOverview = () => {
               className="text-lg text-gray-600 leading-relaxed"
               variants={item}
             >
-              Euro Core leads the way in executive recruitment across Malta’s
+              Euro Core leads the way in executive recruitment across Europe
               dynamic business landscape. <br /> With a consultative approach
               and smart recruitment tools, we help ambitious companies attract
               and hire top-tier talent faster and more efficiently.
@@ -289,4 +289,4 @@ const CompanyOverview = () => {
   );
 };
 
-export default CompanyOverview;
+export default IndustryLeader;

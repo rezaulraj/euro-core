@@ -6,58 +6,103 @@ import {
   FiAward,
   FiMapPin,
   FiArrowRight,
+  FiCheckCircle,
 } from "react-icons/fi";
 import { HiOutlineLightningBolt } from "react-icons/hi";
 
-const CandiateHeroPage = () => {
+const CandidateHeroPage = () => {
   return (
-    <div className="relative h-screen flex items-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background image with gradient overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-black/50"></div>
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImage}
+          alt="Professional candidate"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/60"></div>
       </div>
 
-      {/* Hero content */}
-      <div className="relative z-10 container mx-auto px-6 text-white">
-        <div className="max-w-2xl">
-          <div className="flex items-center mb-4">
-            <div className="w-12 h-1 bg-[#F37F21] mr-4"></div>
-            <span className="uppercase tracking-wider text-[#F37F21] font-medium">
-              For Candidates
+      {/* Hero content - centered */}
+      <div className="relative z-10 container mx-auto px-6 py-32 md:py-36 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Header with decorative elements */}
+          <div className="flex justify-center items-center mb-6">
+            <div className="w-16 h-1 bg-[#F37F21] mr-4"></div>
+            <span className="uppercase tracking-wider text-white font-semibold text-sm">
+              For Ambitious Professionals
             </span>
+            <div className="w-16 h-1 bg-[#F37F21] ml-4"></div>
           </div>
 
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            Your <span className="text-[#F37F21]">Career</span> Journey Starts
-            Here
-            <HiOutlineLightningBolt className="inline-block ml-2 text-[#F37F21]" />
+          {/* Main heading with lightning bolt */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
+            <span className="text-[#F37F21]">Ignite</span> Your Career Potential
+            <HiOutlineLightningBolt className="inline-block ml-2 text-[#F37F21] animate-pulse" />
           </h1>
 
-          <p className="text-lg md:text-xl mb-8 text-gray-200">
-            Discover opportunities that align with your skills, values, and
-            professional aspirations.
+          {/* Subheading */}
+          <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            Discover your perfect role with our personalized matching and access
+            to top employers worldwide.
           </p>
 
-          {/* Features with icons */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex items-center">
-              <FiBriefcase className="text-2xl mr-3 text-[#F37F21]" />
-              <span>Diverse Opportunities</span>
+          {/* Features grid - centered with icons */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
+            {[
+              {
+                icon: <FiBriefcase className="text-2xl" />,
+                text: "Diverse Opportunities",
+              },
+              {
+                icon: <FiUser className="text-2xl" />,
+                text: "Personalized Career Matches",
+              },
+              {
+                icon: <FiAward className="text-2xl" />,
+                text: "Premium Employers",
+              },
+              {
+                icon: <FiMapPin className="text-2xl" />,
+                text: "Global Positions",
+              },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 hover:border-[#F37F21]/50 transition-all group"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="mb-3 p-3 bg-[#F37F21]/20 rounded-full text-[#F37F21] group-hover:bg-[#F37F21]/30 transition">
+                    {item.icon}
+                  </div>
+                  <span className="font-medium text-white group-hover:text-[#F37F21] transition">
+                    {item.text}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA button with animation */}
+          <button className="flex items-center justify-center gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold mx-auto transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#F37F21]/30">
+            Start Your Journey <FiArrowRight className="animate-pulse" />
+          </button>
+
+          {/* Trust indicators */}
+          <div className="mt-16 flex flex-wrap justify-center items-center gap-6 text-sm text-white/90">
+            <div className="flex items-center gap-2 bg-white/30 px-4 py-2 rounded-full text-[15px] font-medium">
+              <FiCheckCircle className="text-[#F37F21]" />
+              <span>95% Candidate Satisfaction</span>
             </div>
-            <div className="flex items-center">
-              <FiUser className="text-2xl mr-3 text-[#F37F21]" />
-              <span>Personalized Matches</span>
+            <div className="h-4 w-px bg-white/30"></div>
+            <div className="flex items-center gap-2 bg-white/30 px-4 py-2 rounded-full text-[15px] font-medium">
+              <FiCheckCircle className="text-[#F37F21]" />
+              <span>1,000+ Successful Placements</span>
             </div>
-            <div className="flex items-center">
-              <FiAward className="text-2xl mr-3 text-[#F37F21]" />
-              <span>Top Employers</span>
-            </div>
-            <div className="flex items-center">
-              <FiMapPin className="text-2xl mr-3 text-[#F37F21]" />
-              <span>Global Reach</span>
+            <div className="h-4 w-px bg-white/30"></div>
+            <div className="flex items-center gap-2 bg-white/30 px-4 py-2 rounded-full text-[15px] font-medium">
+              <FiCheckCircle className="text-[#F37F21]" />
+              <span>30 Countries Worldwide</span>
             </div>
           </div>
         </div>
@@ -66,4 +111,4 @@ const CandiateHeroPage = () => {
   );
 };
 
-export default CandiateHeroPage;
+export default CandidateHeroPage;

@@ -15,12 +15,12 @@ const ContactPartner = () => {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center mb-4">
+          {/* <div className="inline-flex items-center justify-center mb-4">
             <FaHandshake className="text-[#F37F21] text-3xl mr-3" />
             <span className="bg-[#F37F21]/10 text-[#F37F21] font-semibold px-4 py-2 rounded-full">
               PARTNER WITH US
             </span>
-          </div>
+          </div> */}
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Let's Build <span className="text-[#F37F21]">Something Great</span>{" "}
             Together
@@ -193,7 +193,7 @@ const ContactPartner = () => {
 
           {/* Contact Info */}
           <div className="lg:w-1/2">
-            <div className="bg-gradient-to-br from-[#F37F21] to-[#FF9E45] rounded-2xl shadow-xl text-white p-8 h-full">
+            <div className="bg-gradient-to-br from-[#143D66] to-[#143D66]/90 rounded-2xl shadow-xl text-white p-8 h-full">
               <h3 className="text-2xl font-bold mb-6 flex items-center">
                 <FaHandshake className="mr-3" />
                 Why Partner With Us?
