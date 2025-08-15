@@ -3,6 +3,7 @@ import HeroCandidate from "./HeroCandiate";
 import BenefitsSection from "./BenefitsSection";
 import HowItWorks from "./HowItWorks";
 import ContactPageCandidate from "./ContactPageCandidate";
+import BlogCarosel from "../home/BlogCarosel";
 
 const CandidatePage = () => {
   return (
@@ -10,7 +11,8 @@ const CandidatePage = () => {
       <HeroCandidate />
       <BenefitsSection />
       <HowItWorks />
-      <ContactPageCandidate />
+      <BlogCarosel />
+      {/* <ContactPageCandidate /> */}
     </div>
   );
 };

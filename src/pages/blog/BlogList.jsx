@@ -140,13 +140,13 @@ const BlogList = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
               <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition-colors duration-300">
+                <h2 className="text-xl font-bold text-gray-800 mb-2 hover:text-[#F37F21] transition-colors duration-300">
                   <Link to={`/blogs/${blog.slug}`}>{blog.heading}</Link>
                 </h2>
                 <p className="text-gray-600 mb-4">{blog.description}</p>
                 <Link
                   to={`/blogs/${blog.slug}`}
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors duration-300"
+                  className="inline-flex items-center text-[#F37F21] font-medium hover:text-[#fc7100] transition-colors duration-300"
                 >
                   Read more
                   <svg
