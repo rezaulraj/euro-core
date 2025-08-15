@@ -211,7 +211,7 @@ const BlogCarosel = () => {
                   </div>
                   <div className="p-6 flex-grow">
                     <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-[#F37F21] transition-colors duration-300 line-clamp-2">
-                      <a href={`/blogs/${blog.slug}`}>{blog.heading}</a>
+                      <Link to={`/blogs/${blog.slug}`}>{blog.heading}</Link>
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">
                       {blog.description}
