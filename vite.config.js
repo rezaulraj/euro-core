@@ -7,7 +7,6 @@ export default defineConfig({
   base: "./",
   server: {
     historyApiFallback: true,
-    port: 3005,
   },
   build: {
     outDir: "dist",
