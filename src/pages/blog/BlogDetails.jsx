@@ -12,7 +12,7 @@ import {
   FiTwitter,
   FiFacebook,
 } from "react-icons/fi";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // Expanded blog database with more detailed content
 const blogDatabase = {
@@ -1025,7 +1025,7 @@ const BlogDetails = () => {
               </div>
             </motion.div>
 
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8 }}
@@ -1055,7 +1055,33 @@ const BlogDetails = () => {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
+            <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Popular Tags
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "Recruiting",
+                  "Hiring",
+                  "Talent",
+                  "AI",
+                  "Diversity",
+                  "Remote Work",
+                  "HR Tech",
+                  "Interviewing",
+                ].map((tag, index) => (
+                  <motion.button
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm hover:bg-gray-200 transition-colors"
+                  >
+                    #{tag}
+                  </motion.button>
+                ))}
+              </div>
+            </div>
 
             <motion.div
               initial={{ opacity: 0 }}
@@ -1086,7 +1112,7 @@ const BlogDetails = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:w-1/3"
           >
-            <div className="bg-white rounded-xl shadow-md p-6 sticky top-6 mb-6">
+            <div className="bg-white rounded-xl shadow-md p-6 sticky top-16 mb-6 z-10">
               <h3 className="text-xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
                 Related Articles
               </h3>
@@ -1096,36 +1122,43 @@ const BlogDetails = () => {
                     key={blog.id}
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="flex items-start gap-4 cursor-pointer group"
-                    onClick={() => router.push(`/blog/${blog.slug}`)}
+
+                    // href={`/blogs/${blog.slug}`}
+                    // onClick={() => router.push(`/blogs/${blog.slug}`)}
                   >
-                    <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
-                      <img
-                        src={blog.image}
-                        alt={blog.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
-                        {blog.title}
-                      </h4>
-                      <div className="flex items-center text-sm text-gray-500 mt-1">
-                        <FiCalendar className="mr-1" size={14} />
-                        <span>{formatDate(blog.publishDate)}</span>
+                    <Link
+                      to={`/blogs/${blog.slug}`}
+                      className="flex items-start gap-4 cursor-pointer group"
+                    >
+                      <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden">
+                        <img
+                          src={blog.image}
+                          alt={blog.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
                       </div>
-                      <div className="flex items-center text-sm text-gray-500 mt-1">
-                        <FiClock className="mr-1" size={14} />
-                        <span>{blog.readTime}</span>
+
+                      <div>
+                        <h4 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                          {blog.title}
+                        </h4>
+                        <div className="flex items-center text-sm text-gray-500 mt-1">
+                          <FiCalendar className="mr-1" size={14} />
+                          <span>{formatDate(blog.publishDate)}</span>
+                        </div>
+                        <div className="flex items-center text-sm text-gray-500 mt-1">
+                          <FiClock className="mr-1" size={14} />
+                          <span>{blog.readTime}</span>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+            {/* <div className="bg-white rounded-xl shadow-md p-6 mb-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Popular Tags
               </h3>
@@ -1150,11 +1183,11 @@ const BlogDetails = () => {
                   </motion.button>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl shadow-md p-6 text-white"
+              className="bg-gradient-to-r from-blue-600 to-blue-400 rounded-xl shadow-md p-6 text-white relative z-0"
             >
               <h3 className="text-xl font-bold mb-4">Subscribe to Updates</h3>
               <p className="mb-4 opacity-90">

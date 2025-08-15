@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const blogData = [
   {
@@ -140,11 +141,11 @@ const BlogList = () => {
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-bold text-gray-800 mb-2 hover:text-blue-600 transition-colors duration-300">
-                  <a href={`/blogs/${blog.slug}`}>{blog.heading}</a>
+                  <Link to={`/blogs/${blog.slug}`}>{blog.heading}</Link>
                 </h2>
                 <p className="text-gray-600 mb-4">{blog.description}</p>
-                <a
-                  href={`/blogs/${blog.slug}`}
+                <Link
+                  to={`/blogs/${blog.slug}`}
                   className="inline-flex items-center text-blue-600 font-medium hover:text-blue-800 transition-colors duration-300"
                 >
                   Read more
@@ -162,7 +163,7 @@ const BlogList = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </motion.div>
           ))}

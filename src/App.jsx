@@ -13,9 +13,18 @@ import TermsConditionPage from "./pages/tramandcondition/TermsConditionPage";
 import BlogPage from "./pages/blog/BlogPage";
 import Candidate from "./pages/candiaete/Candidate";
 import BlogDetails from "./pages/blog/BlogDetails";
+import ScrollToTop from "./components/ScrollToTop";
+import { FaArrowUpFromBracket } from "react-icons/fa6";
 function App() {
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<HomePage />} />
@@ -32,6 +41,14 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
+      <div className="relative">
+        <span className="fixed bottom-5 right-4 cursor-pointer">
+          <FaArrowUpFromBracket
+            onClick={handleScrollToTop}
+            className="text-4xl p-2 bg-gray-200 rounded-full hover:bg-gray-300 transition-colors animate-pulse"
+          />
+        </span>
+      </div>
     </>
   );
 }
