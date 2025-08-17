@@ -32,7 +32,6 @@ const ContactPartner = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Contact Form */}
           <div className="lg:w-1/2">
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <div className="p-8">
@@ -191,7 +190,6 @@ const ContactPartner = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
           <div className="lg:w-1/2">
             <div className="bg-gradient-to-br from-[#143D66] to-[#143D66]/90 rounded-2xl shadow-xl text-white p-8 h-full">
               <h3 className="text-2xl font-bold mb-6 flex items-center">

@@ -91,7 +91,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Set active nav item based on current route
+  
   useEffect(() => {
     const currentPath = location.pathname;
     const activeItem = navItems.find(
@@ -151,12 +151,12 @@ const Header = () => {
           </div>
         )}
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
+         
           <a href="/">
             <img src={scrolled ? logo2 : logo3} alt="logo" className="h-6" />
           </a>
 
-          {/* Mobile Menu Button */}
+         
           <button
             className="md:hidden focus:outline-none p-2 rounded-full transition-all duration-300 hover:bg-gray-100 hover:bg-opacity-20"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -176,7 +176,7 @@ const Header = () => {
             )}
           </button>
 
-          {/* Desktop Navigation */}
+          
           <nav className="hidden md:flex items-center space-x-6 relative">
             {navItems.map((item, idx) => (
               <div key={idx} className="relative group">
@@ -225,9 +225,9 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Right Section */}
+          
           <div className="hidden md:flex items-center space-x-2">
-            {/* Language Selector */}
+           
             <div className="relative">
               <div
                 className="inline-block"
@@ -286,7 +286,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Contact Button */}
+          
             <button
               onClick={() => setShowContactForm(true)}
               className={`flex items-center space-x-2 px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 cursor-pointer ${
@@ -301,7 +301,7 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+    
         {mobileMenuOpen && (
           <div className="md:hidden bg-white h-screen shadow-xl transition-all duration-500 overflow-y-auto">
             <div className="container mx-auto px-4 py-2">

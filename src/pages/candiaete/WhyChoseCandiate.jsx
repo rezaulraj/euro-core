@@ -13,7 +13,6 @@ const WhyChoseCandidateEurocore = () => {
   return (
     <div className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        {/* Header Section */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Why Choose{" "}
@@ -25,14 +24,12 @@ const WhyChoseCandidateEurocore = () => {
           </p>
         </div>
 
-        {/* Recruitment Process */}
         <div className="mb-20">
           <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
             Our <span className="text-[#F37F21]">Recruitment Process</span>
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {/* Step 1 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <FiUsers className="text-[#F37F21] text-xl" />
@@ -44,7 +41,6 @@ const WhyChoseCandidateEurocore = () => {
               </p>
             </div>
 
-            {/* Step 2 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <FiBarChart2 className="text-[#F37F21] text-xl" />
@@ -56,7 +52,6 @@ const WhyChoseCandidateEurocore = () => {
               </p>
             </div>
 
-            {/* Step 3 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <MdOutlineHandshake className="text-[#F37F21] text-xl" />
@@ -70,7 +65,6 @@ const WhyChoseCandidateEurocore = () => {
               </p>
             </div>
 
-            {/* Step 4 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
                 <FiCheckCircle className="text-[#F37F21] text-xl" />
@@ -83,14 +77,12 @@ const WhyChoseCandidateEurocore = () => {
           </div>
         </div>
 
-        {/* Benefits Section */}
         <div>
           <h3 className="text-2xl font-semibold text-gray-800 mb-8 text-center">
             Our <span className="text-[#F37F21]">Candidate Advantages</span>
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Benefit 1 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -106,7 +98,6 @@ const WhyChoseCandidateEurocore = () => {
               </div>
             </div>
 
-            {/* Benefit 2 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -122,7 +113,6 @@ const WhyChoseCandidateEurocore = () => {
               </div>
             </div>
 
-            {/* Benefit 3 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -137,7 +127,6 @@ const WhyChoseCandidateEurocore = () => {
               </div>
             </div>
 
-            {/* Benefit 4 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -152,7 +141,6 @@ const WhyChoseCandidateEurocore = () => {
               </div>
             </div>
 
-            {/* Benefit 5 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -167,7 +155,6 @@ const WhyChoseCandidateEurocore = () => {
               </div>
             </div>
 
-            {/* Benefit 6 */}
             <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
               <div className="flex items-start mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">

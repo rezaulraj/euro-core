@@ -13,7 +13,6 @@ import { HiOutlineLightningBolt } from "react-icons/hi";
 const CandidateHeroPage = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
@@ -23,10 +22,8 @@ const CandidateHeroPage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-gray-800/60"></div>
       </div>
 
-      {/* Hero content - centered */}
-      <div className="relative z-10 container mx-auto px-6 py-32 md:py-36 text-center">
+      <div className="relative z-10 container mx-auto px-6 py-36 md:py-40 text-center">
         <div className="max-w-4xl mx-auto">
-          {/* Header with decorative elements */}
           <div className="flex justify-center items-center mb-6">
             <div className="w-16 h-1 bg-[#F37F21] mr-4"></div>
             <span className="uppercase tracking-wider text-white font-semibold text-sm">
@@ -35,19 +32,16 @@ const CandidateHeroPage = () => {
             <div className="w-16 h-1 bg-[#F37F21] ml-4"></div>
           </div>
 
-          {/* Main heading with lightning bolt */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-white">
             <span className="text-[#F37F21]">Ignite</span> Your Career Potential
             <HiOutlineLightningBolt className="inline-block ml-2 text-[#F37F21] animate-pulse" />
           </h1>
 
-          {/* Subheading */}
           <p className="text-xl md:text-2xl mb-12 text-gray-200 max-w-2xl mx-auto leading-relaxed">
             Discover your perfect role with our personalized matching and access
             to top employers worldwide.
           </p>
 
-          {/* Features grid - centered with icons */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
             {[
               {
@@ -83,12 +77,6 @@ const CandidateHeroPage = () => {
             ))}
           </div>
 
-          {/* CTA button with animation */}
-          <button className="flex items-center justify-center gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold mx-auto transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#F37F21]/30">
-            Start Your Journey <FiArrowRight className="animate-pulse" />
-          </button>
-
-          {/* Trust indicators */}
           <div className="mt-16 flex flex-wrap justify-center items-center gap-6 text-sm text-white/90">
             <div className="flex items-center gap-2 bg-white/30 px-4 py-2 rounded-full text-[15px] font-medium">
               <FiCheckCircle className="text-[#F37F21]" />
@@ -105,6 +93,10 @@ const CandidateHeroPage = () => {
               <span>30 Countries Worldwide</span>
             </div>
           </div>
+
+          <button className="flex items-center justify-center mt-16 gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold mx-auto transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#F37F21]/30">
+            Start Your Journey <FiArrowRight className="animate-pulse" />
+          </button>
         </div>
       </div>
     </div>

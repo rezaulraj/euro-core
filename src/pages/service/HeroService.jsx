@@ -87,7 +87,6 @@ const HeroService = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden py-8 md:py-36">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={bgimage}
@@ -97,7 +96,6 @@ const HeroService = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 py-20 md:py-0">
         <div className="max-w-6xl mx-auto w-full px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight">
@@ -109,7 +107,6 @@ const HeroService = () => {
             goals—helping you build winning teams that accelerate growth.
           </p>
 
-          {/* Services Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8 md:mt-12">
             {services.map((service, index) => (
               <div
@@ -130,7 +127,7 @@ const HeroService = () => {
           </div>
         </div>
       </div>
-      {/* Client Logos Marquee */}
+
       <div className="absolute bottom-4 left-0 right-0 bg-white/10 backdrop-blur-sm py-4 md:py-8 overflow-hidden">
         <div
           ref={marqueeRef}

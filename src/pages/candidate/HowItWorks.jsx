@@ -47,7 +47,6 @@ const HowItWorks = () => {
       className="py-20 bg-gradient-to-br from-gray-50 to-blue-50"
     >
       <div className="container mx-auto px-6">
-        {/* Section Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-[#F37F21] px-4 py-2 rounded-full mb-4">
             <FaRocket className="animate-pulse" />
@@ -61,24 +60,19 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        {/* Steps Timeline */}
         <div className="relative">
-          {/* Progress line */}
           <div className="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-blue-200 to-green-200 transform -translate-x-1/2"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
               <div key={index} className="relative z-10">
-                {/* Step Card */}
                 <div className="h-full bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 group">
-                  {/* Icon with gradient background */}
                   <div
                     className={`mb-6 w-20 h-20 rounded-2xl bg-gradient-to-br ${step.accentColor} flex items-center justify-center text-white shadow-lg group-hover:rotate-6 transition-transform duration-500`}
                   >
                     {step.icon}
                   </div>
 
-                  {/* Step number */}
                   <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-white border-4 border-blue-50 w-10 h-10 rounded-full flex items-center justify-center text-blue-600 font-bold shadow-sm">
                     {index + 1}
                   </div>
@@ -88,7 +82,6 @@ const HowItWorks = () => {
                   </h3>
                   <p className="text-gray-600 mb-6">{step.description}</p>
 
-                  {/* Checkmark (appears on hover) */}
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <IoMdCheckmarkCircle className="text-3xl text-green-500 animate-bounce" />
                   </div>
@@ -98,8 +91,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        {/* Success CTA */}
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white shadow-2xl overflow-hidden">
+        <div className="mt-20 bg-gradient-to-r from-[#123B65] to-[#123B65]/80 rounded-2xl p-8 md:p-12 text-white shadow-2xl overflow-hidden">
           <div className="relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="lg:w-1/2">
@@ -112,16 +104,13 @@ const HowItWorks = () => {
                 </p>
               </div>
               <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                <button
-                  onClick={() => {
-                    const section = document.querySelector("#get-in-touch");
-                    section?.scrollIntoView({ behavior: "smooth" });
-                  }}
+                <a
+                  href="/career"
                   className="flex items-center gap-3 bg-white text-blue-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
                 >
                   <GiProgression className="text-xl" />
                   <span>Start Your Journey Now</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>

@@ -72,7 +72,6 @@ const WhyCloudeKonektion = () => {
     },
   ];
 
-  // Animation variants
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -119,7 +118,6 @@ const WhyCloudeKonektion = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={container}
     >
-      {/* Floating background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -140,7 +138,6 @@ const WhyCloudeKonektion = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div className="text-center mb-16" variants={item}>
           <motion.h2
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
@@ -164,7 +161,6 @@ const WhyCloudeKonektion = () => {
           </motion.p>
         </motion.div>
 
-        {/* Reasons Grid */}
         <motion.div className="space-y-16" variants={container}>
           {reasons.map((reason, index) => (
             <motion.div
@@ -173,7 +169,6 @@ const WhyCloudeKonektion = () => {
               variants={item}
               whileHover={{ y: -5 }}
             >
-              {/* Number and Icon */}
               <motion.div
                 className="lg:col-span-2 flex flex-col items-center"
                 whileHover={{ scale: 1.05 }}
@@ -191,7 +186,6 @@ const WhyCloudeKonektion = () => {
                 </div>
               </motion.div>
 
-              {/* Content */}
               <motion.div
                 className="lg:col-span-10 bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
                 whileHover={{
@@ -216,7 +210,6 @@ const WhyCloudeKonektion = () => {
                   </motion.p>
                 ))}
 
-                {/* Features/Highlights/Benefits */}
                 <motion.div
                   className="mt-6"
                   initial={{ opacity: 0 }}

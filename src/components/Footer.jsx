@@ -22,7 +22,7 @@ const Footer = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const quickLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
+    { name: "Industries", href: "/industries" },
     { name: "For Employers", href: "/for-employers" },
     { name: "What We Offer", href: "/what-we-offer" },
     { name: "Partner", href: "/partnership" },
@@ -45,7 +45,6 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
           <div className="space-y-6 ">
             <a href="/">
               <img src={logo3} alt="" className="h-14" />
@@ -95,7 +94,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
@@ -113,7 +111,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Our Industries</h4>
             <ul className="space-y-3">
@@ -131,7 +128,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
             <div className="space-y-4">
@@ -164,7 +160,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
             © {new Date().getFullYear()} Euro Core. All rights reserved.

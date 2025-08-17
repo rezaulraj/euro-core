@@ -22,8 +22,8 @@ const TalentExperts = () => {
     name: "",
     email: "",
     "hiring-needs": "",
-    "number-needed": 1, // New field for number of workers needed
-    "selected-industry": "", // New field for selected industry
+    "number-needed": 1,
+    "selected-industry": "", 
     message: "",
   });
 
@@ -36,7 +36,7 @@ const TalentExperts = () => {
   };
 
   const handleNumberChange = (e) => {
-    const value = Math.max(1, parseInt(e.target.value)); // Ensure minimum value is 1
+    const value = Math.max(1, parseInt(e.target.value));
     setFormData((prev) => ({
       ...prev,
       "number-needed": value,
@@ -154,7 +154,7 @@ const TalentExperts = () => {
 
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Success Popup */}
+     
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
@@ -206,7 +206,7 @@ const TalentExperts = () => {
         </div>
       )}
 
-      {/* Floating background elements */}
+      
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
           <div
@@ -227,7 +227,7 @@ const TalentExperts = () => {
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text Content */}
+          
           <div className="space-y-12">
             <div className="text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -242,9 +242,9 @@ const TalentExperts = () => {
               </p>
             </div>
 
-            {/* Expertise Cards */}
+          
             <div className="space-y-8">
-              {/* Card 1 */}
+              
               <div className="relative bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#F37F21] rounded-full flex items-center justify-center text-white">
                   <FaUserTie className="text-xl" />
@@ -270,7 +270,7 @@ const TalentExperts = () => {
                 </div>
               </div>
 
-              {/* Card 2 */}
+             
               <div className="relative bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#F37F21] rounded-full flex items-center justify-center text-white">
                   <FaGlobe className="text-xl" />
@@ -296,7 +296,7 @@ const TalentExperts = () => {
                 </div>
               </div>
 
-              {/* Card 3 */}
+            
               <div className="relative bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#F37F21] rounded-full flex items-center justify-center text-white">
                   <FaClock className="text-xl" />
@@ -324,7 +324,7 @@ const TalentExperts = () => {
             </div>
           </div>
 
-          {/* Right Column - Form */}
+          
           <div className="bg-white rounded-xl shadow-xl overflow-hidden">
             <div className="p-8 md:p-10">
               <div className="text-center mb-8">
@@ -413,7 +413,7 @@ const TalentExperts = () => {
                   />
                 </div>
 
-                {/* New Industry Selection Field */}
+                
                 <div className="space-y-1">
                   <label
                     htmlFor="selected-industry"
@@ -440,7 +440,7 @@ const TalentExperts = () => {
                   </select>
                 </div>
 
-                {/* New Number of Workers Needed Field */}
+               
                 <div className="space-y-1">
                   <label
                     htmlFor="number-needed"
@@ -488,7 +488,6 @@ const TalentExperts = () => {
                   </div>
                 </div>
 
-                {/* Hiring Needs - modified to show job types */}
                 <div className="space-y-1">
                   <label
                     htmlFor="hiring-needs"
@@ -512,7 +511,7 @@ const TalentExperts = () => {
                   </select>
                 </div>
 
-                {/* Message field - same as before */}
+              
                 <div className="space-y-1">
                   <label
                     htmlFor="message"
@@ -543,7 +542,7 @@ const TalentExperts = () => {
         </div>
       </div>
 
-      {/* Animation styles */}
+    
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

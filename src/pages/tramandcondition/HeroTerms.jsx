@@ -10,7 +10,6 @@ import heroTermsAndCondition from "../../assets/teram/terms-and-condition-banner
 const HeroTerms = () => {
   return (
     <div className="relative">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-black/50 z-0"></div>
       <img
         src={heroTermsAndCondition}
@@ -18,9 +17,7 @@ const HeroTerms = () => {
         className="w-full h-[500px] object-cover object-center"
       />
 
-      {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[500px] flex flex-col justify-center text-center">
-        {/* Title */}
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fadeIn">
             Terms & Conditions
@@ -30,9 +27,7 @@ const HeroTerms = () => {
           </p>
         </div>
 
-        {/* Features Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-          {/* Feature 1 */}
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="bg-blue-600 p-3 rounded-full">
@@ -45,7 +40,6 @@ const HeroTerms = () => {
             </p>
           </div>
 
-          {/* Feature 2 */}
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="bg-green-600 p-3 rounded-full">
@@ -58,7 +52,6 @@ const HeroTerms = () => {
             </p>
           </div>
 
-          {/* Feature 3 */}
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="bg-purple-600 p-3 rounded-full">
@@ -71,7 +64,6 @@ const HeroTerms = () => {
             </p>
           </div>
 
-          {/* Feature 4 */}
           <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20 hover:bg-white/20 transition-all duration-300">
             <div className="flex justify-center mb-4">
               <div className="bg-orange-500 p-3 rounded-full">
@@ -86,8 +78,7 @@ const HeroTerms = () => {
         </div>
       </div>
 
-      {/* Animation Styles */}
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes fadeIn {
           from {
             opacity: 0;

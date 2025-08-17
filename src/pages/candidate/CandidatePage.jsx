@@ -4,6 +4,8 @@ import BenefitsSection from "./BenefitsSection";
 import HowItWorks from "./HowItWorks";
 import ContactPageCandidate from "./ContactPageCandidate";
 import BlogCarosel from "../home/BlogCarosel";
+import BlogCardCarousel from "../home/BlogCardCarosel";
+import ContactHelp from "../home/ContactHelp";
 
 const CandidatePage = () => {
   return (
@@ -11,8 +13,10 @@ const CandidatePage = () => {
       <HeroCandidate />
       <BenefitsSection />
       <HowItWorks />
-      <BlogCarosel />
+      {/* <BlogCarosel /> */}
+      <BlogCardCarousel />
       {/* <ContactPageCandidate /> */}
+      <ContactHelp />
     </div>
   );
 };

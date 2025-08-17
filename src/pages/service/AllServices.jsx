@@ -31,7 +31,6 @@ import {
 } from "react-icons/fa";
 import ContactForm from "../../components/ContactForm";
 
-// SVG Dotted Background Component
 const DottedBackground = () => (
   <div className="fixed inset-0 -z-10 overflow-hidden opacity-10">
     <svg
@@ -52,7 +51,6 @@ const DottedBackground = () => (
   </div>
 );
 
-// Animation variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: {
@@ -60,7 +58,7 @@ const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.6, 0.05, 0.01, 0.9], // or "easeOut"
+      ease: [0.6, 0.05, 0.01, 0.9],
     },
   },
 };
@@ -559,7 +557,6 @@ const AllServices = () => {
       <DottedBackground />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -582,7 +579,6 @@ const AllServices = () => {
           </motion.p>
         </motion.div>
 
-        {/* Glass-morphism Cards Grid */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -600,7 +596,6 @@ const AllServices = () => {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
             >
-              {/* Glow effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
               <div className="relative h-48 overflow-hidden">
@@ -678,7 +673,6 @@ const AllServices = () => {
           ))}
         </motion.div>
 
-        {/* Glass-morphism CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -686,7 +680,6 @@ const AllServices = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mt-20 bg-white/70 backdrop-blur-lg rounded-2xl p-8 md:p-12 text-center shadow-2xl border border-white/30 relative overflow-hidden"
         >
-          {/* Decorative glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#F37F21]/10 via-transparent to-[#123B65]/10 opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
           <motion.h3

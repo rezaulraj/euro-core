@@ -8,7 +8,6 @@ const HeroEmployee = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   return (
     <div className="relative h-screen min-h-[500px] w-full overflow-hidden">
-      {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
@@ -18,7 +17,6 @@ const HeroEmployee = () => {
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-5">
@@ -33,9 +31,7 @@ const HeroEmployee = () => {
           </p>
         </div>
 
-        {/* Action Buttons */}
         <div className="flex flex-wrap justify-center gap-6 mt-3">
-          {/* Request Staff Button */}
           <motion.button
             onClick={() => {
               setShowContactForm(true);
@@ -55,7 +51,6 @@ const HeroEmployee = () => {
             </div>
           </motion.button>
 
-          {/* Transparent Explore How It Works Button */}
           <motion.button
             onClick={() => {
               const section = document.querySelector("#how-we-work");
@@ -81,14 +76,13 @@ const HeroEmployee = () => {
         </div>
       </div>
 
-      {/* Floating Elements */}
       <div className="absolute bottom-10 left-10 w-24 h-24 rounded-full bg-[#00BCFF]/10 blur-xl animate-float"></div>
       <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-[#0066FF]/10 blur-xl animate-float-delay"></div>
       <ContactForm
         show={showContactForm}
         onClose={() => setShowContactForm(false)}
       />
-      {/* Animation styles */}
+
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

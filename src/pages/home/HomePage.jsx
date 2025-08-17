@@ -10,6 +10,7 @@ import OurPartner from "./OurPartner";
 import ContactHelp from "./ContactHelp";
 import WhyChooseUsCandidate from "./WhyChooseUsCandidate";
 import BlogCarosel from "./BlogCarosel";
+import BlogCardCarosel from "./BlogCardCarosel";
 
 const HomePage = () => {
   return (
@@ -20,7 +21,8 @@ const HomePage = () => {
       <AreaExpertise />
       <PartnerHome />
       <WhyChooseUsCandidate />
-      <BlogCarosel />
+      {/* <BlogCarosel /> */}
+      <BlogCardCarosel />
       <Consultation />
       <WhyCloudeKonektion />
       <OurPartner />

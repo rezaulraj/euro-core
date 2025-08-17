@@ -15,7 +15,6 @@ const CandidateForm = () => {
       className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-50 py-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-4xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Join Our <span className="text-[#F37F21]">Talent Network</span>
@@ -26,10 +25,8 @@ const CandidateForm = () => {
           </p>
         </div>
 
-        {/* Form Container */}
         <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
           <div className="md:flex">
-            {/* Left Side - Decorative */}
             <div className="hidden md:block md:w-2/5 bg-gradient-to-b from-[#123B65] to-[#123B65]/90 p-10 text-white">
               <div className="h-full flex flex-col justify-between">
                 <div>
@@ -69,11 +66,9 @@ const CandidateForm = () => {
               </div>
             </div>
 
-            {/* Right Side - Form */}
             <div className="md:w-3/5 p-8 md:p-10">
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* First Name */}
                   <div>
                     <label
                       htmlFor="firstName"
@@ -95,7 +90,6 @@ const CandidateForm = () => {
                     </div>
                   </div>
 
-                  {/* Last Name */}
                   <div>
                     <label
                       htmlFor="lastName"
@@ -118,7 +112,6 @@ const CandidateForm = () => {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div>
                   <label
                     htmlFor="email"
@@ -140,7 +133,6 @@ const CandidateForm = () => {
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div>
                   <label
                     htmlFor="phone"
@@ -162,7 +154,6 @@ const CandidateForm = () => {
                   </div>
                 </div>
 
-                {/* Job Interest */}
                 <div>
                   <label
                     htmlFor="jobInterest"
@@ -184,7 +175,6 @@ const CandidateForm = () => {
                   </div>
                 </div>
 
-                {/* Resume Upload */}
                 <div>
                   <label
                     htmlFor="resume"
@@ -219,7 +209,6 @@ const CandidateForm = () => {
                   </div>
                 </div>
 
-                {/* Message */}
                 <div>
                   <label
                     htmlFor="message"
@@ -241,7 +230,6 @@ const CandidateForm = () => {
                   </div>
                 </div>
 
-                {/* Submit Button */}
                 <div>
                   <button
                     type="submit"

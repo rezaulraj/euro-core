@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaUser, FaEnvelope, FaComment, FaTimes } from "react-icons/fa";
+import {
+  FaUser,
+  FaEnvelope,
+  FaComment,
+  FaTimes,
+  FaPhone,
+} from "react-icons/fa";
 import contact from "../../assets/home/contact.jpg";
 
 const ContactHelp = () => {
@@ -8,6 +14,7 @@ const ContactHelp = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
 
@@ -76,6 +83,7 @@ const ContactHelp = () => {
     setFormData({
       name: "",
       email: "",
+      phone: "",
       message: "",
     });
   };
@@ -266,6 +274,13 @@ const ContactHelp = () => {
                   label: "Your email",
                   type: "email",
                   placeholder: "john@example.com",
+                },
+                {
+                  icon: <FaPhone />,
+                  id: "phone",
+                  label: "Your phone",
+                  type: "tel",
+                  placeholder: "+4032042420",
                 },
                 {
                   icon: <FaComment />,

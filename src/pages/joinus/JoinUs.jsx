@@ -59,7 +59,6 @@ const JoinUs = () => {
       className="py-20 bg-gradient-to-b from-gray-50 to-white relative"
     >
       <div className="container mx-auto px-6">
-        {/* Hero Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-[#F37F21] px-4 py-2 rounded-full mb-4">
             <FaUsers className="text-lg" />
@@ -74,7 +73,6 @@ const JoinUs = () => {
           </p>
         </div>
 
-        {/* Culture Video Section */}
         <div className="mb-20 bg-white rounded-2xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-8 md:p-12">
@@ -104,7 +102,6 @@ const JoinUs = () => {
           </div>
         </div>
 
-        {/* Core Values */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Our <span className="text-[#F37F21]">Core Values</span>
@@ -127,7 +124,6 @@ const JoinUs = () => {
           </div>
         </div>
 
-        {/* Employee Perks */}
         <div className="mb-20 bg-blue-50 rounded-2xl p-8 md:p-12">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
             Why You'll <span className="text-[#F37F21]">Love It Here</span>
@@ -169,7 +165,6 @@ const JoinUs = () => {
         </div>
       </div>
 
-      {/* Video Modal */}
       <AnimatePresence>
         {isVideoOpen && (
           <motion.div

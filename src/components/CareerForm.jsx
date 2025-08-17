@@ -89,7 +89,6 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
 
                 <form onSubmit={handleSubmit}>
                   <div className="space-y-4">
-                    {/* Name Field */}
                     <div>
                       <div className="flex items-center mb-2">
                         <FiUser className="text-gray-500 mr-2" />
@@ -108,7 +107,6 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                       />
                     </div>
 
-                    {/* Email Field */}
                     <div>
                       <div className="flex items-center mb-2">
                         <FiMail className="text-gray-500 mr-2" />
@@ -127,7 +125,6 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                       />
                     </div>
 
-                    {/* Phone Field */}
                     <div>
                       <div className="flex items-center mb-2">
                         <FiPhone className="text-gray-500 mr-2" />
@@ -146,7 +143,6 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                       />
                     </div>
 
-                    {/* CV Upload */}
                     <div>
                       <div className="flex items-center mb-2">
                         <FiFileText className="text-gray-500 mr-2" />
@@ -182,7 +178,6 @@ const CareerForm = ({ show, onClose, onSubmit }) => {
                       )}
                     </div>
 
-                    {/* Message Field */}
                     <div>
                       <div className="flex items-center mb-2">
                         <FiMessageSquare className="text-gray-500 mr-2" />

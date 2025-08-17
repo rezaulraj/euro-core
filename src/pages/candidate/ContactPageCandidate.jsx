@@ -52,7 +52,6 @@ const ContactPageCandidate = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
     setTimeout(() => {
       console.log("Form submitted:", formData);
       setIsSubmitting(false);
@@ -78,7 +77,6 @@ const ContactPageCandidate = () => {
       id="get-in-touch"
       className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8"
     >
-      {/* Success Popup */}
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
@@ -131,7 +129,6 @@ const ContactPageCandidate = () => {
       )}
 
       <div className="max-w-7xl mx-auto">
-        {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Get in <span className="text-[#F37F21]">Touch</span>
@@ -143,7 +140,6 @@ const ContactPageCandidate = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             <div className="p-8 sm:p-10">
               <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
@@ -153,7 +149,6 @@ const ContactPageCandidate = () => {
 
               <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 gap-6">
-                  {/* Name */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FaUser className="text-gray-400" />
@@ -169,7 +164,6 @@ const ContactPageCandidate = () => {
                     />
                   </div>
 
-                  {/* Email */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FaEnvelope className="text-gray-400" />
@@ -185,7 +179,6 @@ const ContactPageCandidate = () => {
                     />
                   </div>
 
-                  {/* Phone */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <FaPhone className="text-gray-400" />
@@ -200,7 +193,6 @@ const ContactPageCandidate = () => {
                     />
                   </div>
 
-                  {/* Subject */}
                   <div className="relative">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                       <MdOutlineWork className="text-gray-400" />
@@ -219,7 +211,6 @@ const ContactPageCandidate = () => {
                     </select>
                   </div>
 
-                  {/* Message */}
                   <div>
                     <textarea
                       name="message"
@@ -232,7 +223,6 @@ const ContactPageCandidate = () => {
                     ></textarea>
                   </div>
 
-                  {/* CV Upload */}
                   <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
                     <label className="cursor-pointer">
                       <div className="flex flex-col items-center justify-center">
@@ -281,7 +271,6 @@ const ContactPageCandidate = () => {
                     </label>
                   </div> */}
 
-                  {/* Submit Button */}
                   <div>
                     <button
                       type="submit"
@@ -327,9 +316,7 @@ const ContactPageCandidate = () => {
             </div>
           </div>
 
-          {/* Contact Info */}
           <div className="space-y-8">
-            {/* Office Info */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Our Office
@@ -383,7 +370,6 @@ const ContactPageCandidate = () => {
               </div>
             </div>
 
-            {/* Social Links */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <h3 className="text-xl font-bold text-gray-900 mb-4">
                 Connect With Us
@@ -448,7 +434,6 @@ const ContactPageCandidate = () => {
               </div>
             </div>
 
-            {/* Map Embed */}
             <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d3231.8883193835154!2d14.513150775680367!3d35.90075081788424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m5!1s0x130e452977901537%3A0x18a22beaac790ffc!2s60%20St.Joseph&#39;s%20Street%2C%20Il-Belt%20Valletta%2C%20Malta!3m2!1d35.9007465!2d14.515725699999999!4m0!5e0!3m2!1sen!2sbd!4v1752040902403!5m2!1sen!2sbd"

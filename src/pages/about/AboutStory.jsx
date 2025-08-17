@@ -8,9 +8,7 @@ const AboutStory = () => {
   return (
     <div className="bg-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-20">
-        {/* Section 1 - Text Left / Image Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-gray-900">
               A Proven Approach to Talent Matching
@@ -19,14 +17,13 @@ const AboutStory = () => {
             <p className="text-lg text-gray-600">
               Our founders identified a critical gap in how organizations
               sourced top-tier professionals for strategic roles—and created a
-              solution that continues to lead the market. Today, Euro Core
-              is a trusted partner for companies across Europe, APAC, and MENA,
+              solution that continues to lead the market. Today, Euro Core is a
+              trusted partner for companies across Europe, APAC, and MENA,
               helping them build high-impact teams that drive growth,
               innovation, and long-term success.
             </p>
           </div>
 
-          {/* Right Column - Image */}
           <div className="relative h-80 bg-gray-100 rounded-xl overflow-hidden">
             <img
               src={rosaliePhoto}
@@ -40,9 +37,7 @@ const AboutStory = () => {
           </div>
         </div>
 
-        {/* Section 2 - Image Left / Text Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Image */}
           <div className="relative h-80 bg-gray-100 rounded-xl overflow-hidden lg:order-1 order-2">
             <img
               src={maximePhoto}
@@ -55,7 +50,6 @@ const AboutStory = () => {
             </div> */}
           </div>
 
-          {/* Right Column - Text */}
           <div className="space-y-6 lg:order-2 order-1">
             <h3 className="text-3xl font-bold text-gray-900">
               Trusted by Industry Leaders
@@ -81,9 +75,7 @@ const AboutStory = () => {
           </div>
         </div>
 
-        {/* Section 3 - Office Location */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-gray-900">Our Office</h3>
             <div className="w-20 h-1 bg-[#F37F21]"></div>
@@ -102,7 +94,6 @@ const AboutStory = () => {
             </div>
           </div>
 
-          {/* Right Column - Map Placeholder */}
           <div className="relative h-80 bg-gray-100 rounded-xl overflow-hidden flex items-center justify-center">
             <div className="absolute inset-0 bg-gray-900/20"></div>
             <div className="absolute bottom-0 right-0 bg-gray-900/40 text-center p-6">

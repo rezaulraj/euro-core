@@ -13,7 +13,6 @@ import ContactForm from "../../components/ContactForm";
 const HeroHome = () => {
   const [showContactForm, setShowContactForm] = useState(false);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,12 +52,10 @@ const HeroHome = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
-      {/* Hero Section with Background Image */}
       <div
         className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        {/* Overlay */}
         <motion.div
           className="absolute inset-0 bg-black/50"
           initial={{ opacity: 0 }}
@@ -66,7 +63,6 @@ const HeroHome = () => {
           transition={{ duration: 1 }}
         />
 
-        {/* Glassy Text Container */}
         <motion.div
           className="relative z-10 max-w-7xl mx-auto px-6 py-32"
           initial="hidden"
@@ -74,7 +70,6 @@ const HeroHome = () => {
           variants={containerVariants}
         >
           <motion.div className="text-center space-y-8">
-            {/* Subheading with icon */}
             <motion.div
               className="flex items-center justify-center space-x-2"
               variants={itemVariants}
@@ -85,7 +80,6 @@ const HeroHome = () => {
               </span>
             </motion.div>
 
-            {/* Main Heading */}
             <motion.h1
               className="text-4xl md:text-6xl font-bold text-white leading-tight"
               variants={itemVariants}
@@ -113,7 +107,6 @@ const HeroHome = () => {
               </motion.span>
             </motion.h1>
 
-            {/* Tagline */}
             <motion.div
               className="relative inline-block"
               variants={itemVariants}
@@ -130,7 +123,6 @@ const HeroHome = () => {
               <div className="absolute -bottom-1 left-0 right-0 h-1 bg-[#00BCFF]/50 blur-sm"></div>
             </motion.div>
 
-            {/* Description */}
             <motion.p
               className="text-white/90 max-w-3xl mx-auto text-lg leading-relaxed"
               variants={itemVariants}
@@ -143,7 +135,6 @@ const HeroHome = () => {
               ahead.
             </motion.p>
 
-            {/* Buttons with Smooth Effects */}
             <motion.div
               className="flex flex-col sm:flex-row justify-center gap-4 pt-4"
               variants={itemVariants}
@@ -187,7 +178,6 @@ const HeroHome = () => {
           </motion.div>
         </motion.div>
 
-        {/* Stats Bar */}
         {/* <motion.div
           className="absolute bottom-10 left-0 right-0"
           initial="offscreen"

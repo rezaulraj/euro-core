@@ -73,7 +73,6 @@ const FAQ = () => {
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             <span className="text-[#F37F21]">FAQ</span>
@@ -84,7 +83,6 @@ const FAQ = () => {
           </p>
         </div>
 
-        {/* FAQ Accordion */}
         <div className="max-w-4xl mx-auto space-y-4">
           {faqs.map((faq, index) => (
             <div

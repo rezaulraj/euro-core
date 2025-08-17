@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import herojoin from "../../assets/join/heroj.webp";
-import join from "../../assets/join/join.jpeg";
 import CareerForm from "../../components/CareerForm";
 
 const HeroJoinUs = () => {
@@ -10,7 +9,7 @@ const HeroJoinUs = () => {
   };
   return (
     <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-      {/* Background Hero Image with Gradient Overlay */}
+   
       <div className="absolute inset-0 z-0">
         <img
           src={herojoin}
@@ -20,12 +19,11 @@ const HeroJoinUs = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-600/70"></div>
       </div>
 
-      {/* Content Container */}
-      <div className="relative z-10 container mx-auto px-6 py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          {/* Left: Text Content */}
-          <div className="lg:w-1/2 text-white">
-            <div className="inline-flex items-center gap-3 bg-white/20 px-4 py-2 rounded-full mb-6 backdrop-blur-sm">
+      <div className="relative z-10 container mx-auto px-6 py-24 lg:py-32 flex justify-center">
+        <div className="w-full max-w-4xl text-center">
+       
+          <div className="text-white">
+            <div className="inline-flex items-center gap-3 bg-white/20 px-4 py-2 rounded-full mb-6 backdrop-blur-sm mx-auto">
               <span className="font-medium">We're Hiring!</span>
             </div>
 
@@ -33,12 +31,12 @@ const HeroJoinUs = () => {
               Build Your Future <span className="text-[#F37F21]">With Us</span>
             </h1>
 
-            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-lg">
+            <p className="text-xl md:text-2xl mb-8 opacity-90 mx-auto max-w-2xl">
               Join a global team driving innovation in Euro Core solutions.
               Advance your career while making a real impact.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => {
                   setShowContactForm(true);
@@ -58,8 +56,8 @@ const HeroJoinUs = () => {
               </button>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap gap-6 mt-12">
+
+            <div className="flex flex-wrap gap-6 mt-12 justify-center">
               {[
                 { value: "95%", label: "Employee Satisfaction" },
                 { value: "4.8/5", label: "Work-Life Balance" },
@@ -75,21 +73,6 @@ const HeroJoinUs = () => {
                   <p className="text-sm opacity-80">{stat.label}</p>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Right: Team Image with Floating Effect */}
-          <div className="lg:w-1/2 relative mt-12 lg:mt-0">
-            <div className="relative w-full max-w-xl mx-auto">
-              <img
-                src={join}
-                alt="Happy team members"
-                className="rounded-2xl w-full h-full border-4 border-white shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500"
-              />
-
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-400 rounded-full opacity-10 -z-10"></div>
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-yellow-400 rounded-full opacity-10 -z-10"></div>
             </div>
           </div>
         </div>

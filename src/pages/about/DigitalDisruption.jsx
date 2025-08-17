@@ -2,7 +2,6 @@ import React from "react";
 import { FaRocket, FaUserTie, FaGlobe, FaLightbulb } from "react-icons/fa";
 
 const DigitalDisruption = () => {
-  // SVG dot pattern component
   const DotPattern = () => (
     <svg
       className="absolute inset-0 w-full h-full opacity-10 z-0"
@@ -24,16 +23,13 @@ const DigitalDisruption = () => {
 
   return (
     <div className="relative bg-white py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Dot Pattern Background */}
       <DotPattern />
 
-      {/* Floating elements */}
       <div className="absolute top-1/4 left-10 w-24 h-24 rounded-full bg-[#00BCFF]/10 blur-xl animate-float"></div>
       <div className="absolute bottom-1/4 right-10 w-32 h-32 rounded-full bg-[#0066FF]/10 blur-xl animate-float-delay"></div>
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text Content */}
           <div className="space-y-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#F37F21]/10 text-[#F37F21] text-sm font-semibold mb-6">
               Since 2015
@@ -54,7 +50,6 @@ const DigitalDisruption = () => {
               very beginning.
             </p>
 
-            {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
               <div className="bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
                 <div className="flex items-center space-x-3">
@@ -92,7 +87,6 @@ const DigitalDisruption = () => {
             </div>
           </div>
 
-          {/* Right Column - Image Placeholder */}
           <div className="relative h-96 bg-gradient-to-br from-[#F37F21]/10 to-[#0066FF]/10 rounded-2xl overflow-hidden flex items-center justify-center">
             <div className="text-center p-8 backdrop-blur-sm bg-white/80 rounded-xl max-w-md mx-auto border border-white/20">
               <FaRocket className="text-5xl text-[#F37F21] mx-auto mb-4 animate-pulse" />
@@ -108,7 +102,6 @@ const DigitalDisruption = () => {
         </div>
       </div>
 
-      {/* Animation styles */}
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

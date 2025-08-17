@@ -14,7 +14,6 @@ const TermsAndConditions = () => {
   return (
     <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center bg-blue-100 p-3 rounded-full mb-4">
             <HiOutlineDocumentText className="text-blue-600 text-3xl" />
@@ -26,7 +25,6 @@ const TermsAndConditions = () => {
         </div>
 
         <div className="bg-white shadow-xl rounded-xl overflow-hidden">
-          {/* Introduction */}
           <div className="p-8 border-b border-gray-200">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">
               Welcome to Euro Core Recruitment
@@ -45,7 +43,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* General Terms */}
           <div className="p-8 border-b border-gray-200">
             <div className="flex items-start mb-6">
               <div className="bg-blue-100 p-2 rounded-lg mr-4">
@@ -74,7 +71,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* Employer Zone */}
           <div className="p-8 border-b border-gray-200 bg-blue-50">
             <div className="flex items-start">
               <div className="bg-blue-100 p-2 rounded-lg mr-4">
@@ -109,7 +105,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* Candidate Zone */}
           <div className="p-8 border-b border-gray-200">
             <div className="flex items-start">
               <div className="bg-blue-100 p-2 rounded-lg mr-4">
@@ -149,7 +144,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* Partner Zone */}
           <div className="p-8 border-b border-gray-200 bg-blue-50">
             <div className="flex items-start">
               <div className="bg-blue-100 p-2 rounded-lg mr-4">
@@ -187,7 +181,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* Data Protection */}
           <div className="p-8 border-b border-gray-200">
             <div className="flex items-start">
               <div className="bg-blue-100 p-2 rounded-lg mr-4">
@@ -220,7 +213,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* Liability */}
           <div className="p-8">
             <div className="flex items-start">
               <div className="bg-blue-100 p-2 rounded-lg mr-4">
@@ -251,7 +243,6 @@ const TermsAndConditions = () => {
             </div>
           </div>
 
-          {/* Acceptance */}
           <div className="bg-gray-800 text-white p-6">
             <div className="flex items-center">
               <MdPrivacyTip className="text-2xl mr-3 text-blue-300" />

@@ -11,13 +11,13 @@ import {
   FaChartLine,
 } from "react-icons/fa";
 import ContactForm from "../../components/ContactForm";
+import { FaUsersBetweenLines } from "react-icons/fa6";
 
 const WorkersPartners = () => {
   const [showContactForm, setShowContactForm] = useState(false);
 
   return (
     <section className="relative overflow-hidden min-h-screen flex items-center justify-center">
-      {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
@@ -27,9 +27,7 @@ const WorkersPartners = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-800/90 to-gray-600/80"></div>
       </div>
 
-      {/* Centered content container */}
       <div className="relative z-10 container mx-auto px-6 py-32 lg:py-36 text-center max-w-4xl">
-        {/* Header with icon */}
         <div className="flex justify-center items-center gap-3 mb-6">
           <FaHandshake className="text-[#F37F21] text-3xl" />
           <span className="font-semibold bg-white/10 px-4 py-1 rounded-full backdrop-blur-sm text-white">
@@ -37,21 +35,17 @@ const WorkersPartners = () => {
           </span>
         </div>
 
-        {/* Main heading */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
           <span className="text-[#F37F21]">Supporting</span> Workers & Building
           Partnerships
         </h1>
 
-        {/* Description */}
         <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-3xl mx-auto">
           We provide comprehensive support to workers and collaborate with
           agencies to create meaningful opportunities worldwide.
         </p>
 
-        {/* Benefits cards - centered grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
-          {/* Job Search Card */}
           {/* <div className="bg-white/10 p-6 rounded-xl backdrop-blur-sm border border-white/20 hover:bg-white/20 transition transform hover:scale-[1.02]">
             <div className="flex flex-col items-center text-center gap-4">
               <div className="bg-[#F37F21]/20 p-3 rounded-full">
@@ -109,27 +103,21 @@ const WorkersPartners = () => {
           </div> */}
         </div>
 
-        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <button
-            onClick={() =>
-              document
-                .querySelector("#get-in-touch")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+          <a
+            href="/candidate"
             className="flex items-center justify-center gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
           >
-            Candidate Support <FaArrowRight />
-          </button>
-          <button
-            onClick={() => setShowContactForm(true)}
+            Candidate Support <FaUsersBetweenLines />
+          </a>
+          <a
+            href="/partnership"
             className="flex items-center justify-center gap-2 bg-transparent hover:bg-white/10 text-white px-8 py-4 rounded-lg font-bold border-2 border-white transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
           >
             Partner With Us <FaHandshake />
-          </button>
+          </a>
         </div>
 
-        {/* Stats ribbon */}
         <div className="mt-16 bg-white/10 backdrop-blur-sm p-4 rounded-full inline-flex items-center gap-8 px-8 border border-white/20">
           <div className="text-center">
             <p className="text-2xl font-bold text-white">15+</p>
@@ -148,7 +136,7 @@ const WorkersPartners = () => {
         </div>
       </div>
 
-      {/* Contact form modal */}
+     
       <ContactForm
         show={showContactForm}
         onClose={() => setShowContactForm(false)}

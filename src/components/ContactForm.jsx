@@ -45,7 +45,7 @@ const ContactForm = ({ show, onClose }) => {
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
-    setTimeout(() => setShowBooking(true), 800); // Delay to allow animation to complete
+    setTimeout(() => setShowBooking(true), 800);
   };
 
   return (
@@ -57,19 +57,16 @@ const ContactForm = ({ show, onClose }) => {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 overflow-hidden"
         >
-          {/* Background overlay */}
           <motion.div
             className="absolute inset-0 bg-black/50"
             onClick={onClose}
           />
 
-          {/* Main container */}
           <motion.div
             className="absolute inset-0 flex items-center justify-center p-4"
             layout
           >
             {!showBooking ? (
-              // Initial selection view
               <motion.div
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
@@ -140,7 +137,6 @@ const ContactForm = ({ show, onClose }) => {
                 </div>
               </motion.div>
             ) : (
-              // Full-screen booking view
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -13,7 +13,7 @@ import candidateImage3 from "../../assets/candidate/interviewp.png?url";
 const CandidateProcess = () => {
   return (
     <div className="bg-white py-20">
-      {/* Header Section */}
+   
       <div className="text-center max-w-4xl mx-auto px-6 mb-20">
         <h2 className="text-4xl font-bold text-gray-900 mb-6">
           Your <span className="text-[#F37F21]">Dream Career</span> Journey
@@ -24,9 +24,9 @@ const CandidateProcess = () => {
         </p>
       </div>
 
-      {/* Process Timeline */}
+      
       <div className="max-w-6xl mx-auto px-6">
-        {/* Step 1 - Left Aligned */}
+      
         <div className="flex flex-col md:flex-row items-center mb-28">
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
             <div className="flex items-center mb-6">
@@ -66,7 +66,7 @@ const CandidateProcess = () => {
           </div>
         </div>
 
-        {/* Step 2 - Right Aligned */}
+  
         <div className="flex flex-col md:flex-row items-center mb-28">
           <div className="md:w-1/2 order-2 md:order-1">
             <img
@@ -106,7 +106,7 @@ const CandidateProcess = () => {
           </div>
         </div>
 
-        {/* Step 3 - Left Aligned */}
+    
         <div className="flex flex-col md:flex-row items-center mb-28">
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
             <div className="flex items-center mb-6">
@@ -146,7 +146,7 @@ const CandidateProcess = () => {
           </div>
         </div>
 
-        {/* Contact Section */}
+   
         <div className="bg-gradient-to-r from-[#123B65]/90 to-[#123B65] rounded-2xl p-10 text-white text-center">
           <div className="max-w-2xl mx-auto">
             <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8">

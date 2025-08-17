@@ -5,7 +5,7 @@ import { FaArrowLeft } from "react-icons/fa";
 const NotFound = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-cyan-100 relative overflow-hidden px-4">
-      {/* Background Illustration */}
+      
       <div className="absolute inset-0 opacity-10 z-0">
         <svg viewBox="0 0 100 100" className="w-full h-full">
           {[...Array(30)].map((_, i) => (
@@ -20,7 +20,7 @@ const NotFound = () => {
         </svg>
       </div>
 
-      {/* Content */}
+      
       <div className="relative z-10 text-center">
         <h1 className="text-7xl font-extrabold text-[#00BCFF] animate-bounce">
           This page under development

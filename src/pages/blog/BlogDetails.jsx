@@ -14,7 +14,7 @@ import {
 } from "react-icons/fi";
 import { Link, useParams } from "react-router-dom";
 
-// Expanded blog database with more detailed content
+
 const blogDatabase = {
   "essential-skills-for-modern-recruiters": {
     id: 1,
@@ -708,7 +708,7 @@ const blogDatabase = {
   },
 };
 
-// All available blogs for related posts randomization
+
 const allBlogs = [
   {
     id: 1,
@@ -820,14 +820,14 @@ const BlogDetails = () => {
 
   useEffect(() => {
     if (slug) {
-      // Simulate API fetch
+ 
       setTimeout(() => {
         const foundBlog =
           blogDatabase[slug] ||
           blogDatabase["essential-skills-for-modern-recruiters"];
         setBlog(foundBlog);
 
-        // Get related blogs - first try predefined, then random
+        
         let related = [];
         if (foundBlog.relatedBlogIds) {
           related = allBlogs.filter(
@@ -836,7 +836,7 @@ const BlogDetails = () => {
           );
         }
 
-        // If not enough related blogs, add random ones
+      
         while (related.length < 3) {
           const randomBlog =
             allBlogs[Math.floor(Math.random() * allBlogs.length)];
@@ -954,7 +954,7 @@ const BlogDetails = () => {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-gray-50"
     >
-      {/* Full-width image with gray overlay */}
+ 
       <div className="relative w-full h-96 bg-gray-900">
         <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
         <img
@@ -977,7 +977,7 @@ const BlogDetails = () => {
 
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Main Content */}
+   
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -1105,7 +1105,7 @@ const BlogDetails = () => {
             </motion.div>
           </motion.div>
 
-          {/* Sidebar */}
+       
           <motion.div
             initial={{ x: 20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

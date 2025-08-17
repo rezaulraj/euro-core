@@ -32,7 +32,7 @@ const PartnerHome = () => {
     },
   ];
 
-  // Animation variants
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -79,7 +79,7 @@ const PartnerHome = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={container}
     >
-      {/* Floating background elements */}
+   
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(10)].map((_, i) => (
           <motion.div
@@ -130,7 +130,6 @@ const PartnerHome = () => {
           </motion.p>
         </motion.div>
 
-        {/* Benefits Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
           variants={container}
@@ -165,7 +164,7 @@ const PartnerHome = () => {
           ))}
         </motion.div>
 
-        {/* CTA */}
+       
         <motion.div className="text-center" variants={item}>
           <motion.a
             href="/partnership"

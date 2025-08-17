@@ -75,7 +75,6 @@ const OurPartner = () => {
 
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Floating background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
           <div
@@ -95,7 +94,6 @@ const OurPartner = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             What our <span className="text-[#F37F21]">partners say</span>
@@ -103,7 +101,6 @@ const OurPartner = () => {
           <div className="w-20 h-1 bg-[#F37F21] mx-auto mb-6"></div>
         </div>
 
-        {/* Testimonials Carousel */}
         <div
           className="relative overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
@@ -118,7 +115,6 @@ const OurPartner = () => {
               <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
                 <div className="bg-white p-8 md:p-10 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
-                    {/* Testimonial Content */}
                     <div className="md:w-2/3">
                       <FaQuoteLeft className="text-3xl text-[#F37F21] mb-6 opacity-30" />
                       <p className="text-lg text-gray-600 italic mb-8">
@@ -148,7 +144,6 @@ const OurPartner = () => {
                       </div>
                     </div>
 
-                    {/* Partner Image */}
                     <div className="md:w-1/3 flex items-center justify-center">
                       <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-b-full rounded-tl-full overflow-hidden border-4 border-[#F37F21]/20">
                         <img
@@ -165,7 +160,6 @@ const OurPartner = () => {
           </div>
         </div>
 
-        {/* Navigation Dots */}
         <div className="flex justify-center mt-10 space-x-2">
           {testimonials.map((_, index) => (
             <button
@@ -180,7 +174,6 @@ const OurPartner = () => {
         </div>
       </div>
 
-      {/* Animation styles */}
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

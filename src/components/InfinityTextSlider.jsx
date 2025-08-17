@@ -116,7 +116,7 @@ const InfinityTextSlider = ({ atTop }) => {
       >
         <span className="flex items-center text-center gap-2">
           <TfiAnnouncement />
-         Explore News Feed
+          Explore News Feed
         </span>
       </div>
       <div className="slider-track flex whitespace-nowrap will-change-transform">
@@ -130,7 +130,7 @@ const InfinityTextSlider = ({ atTop }) => {
                 to={`/blogs/${text.slug}`}
                 className={`flex items-center gap-5 ${
                   atTop ? "text-white" : "text-gray-800"
-                }  border-r px-4 font-medium cursor-pointer`}
+                }  border-r px-4 font-medium cursor-pointer hover:text-[#F37F21]`}
               >
                 <p>{text.heading}</p>
               </Link>

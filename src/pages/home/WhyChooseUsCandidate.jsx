@@ -54,7 +54,6 @@ const WhyChooseUsCandidate = () => {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Hero Section */}
         <div className="text-center mb-16 max-w-5xl mx-auto">
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
             Why <span className="text-[#F37F21]">Choose EuroCore</span> for Your
@@ -66,7 +65,6 @@ const WhyChooseUsCandidate = () => {
           </p>
         </div>
 
-        {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
             <div
@@ -88,7 +86,6 @@ const WhyChooseUsCandidate = () => {
           ))}
         </div>
 
-        {/* Testimonial Section */}
         <div className="mt-20 bg-white rounded-xl shadow-lg overflow-hidden">
           <div className="md:flex">
             <div className="md:flex-shrink-0">
@@ -131,7 +128,6 @@ const WhyChooseUsCandidate = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="mt-16 bg-gradient-to-r from-[#153E67] to-[#1e4f80] rounded-xl shadow-xl overflow-hidden">
           <div className="px-6 py-12 sm:p-16">
             <div className="md:flex md:items-center md:justify-between">
@@ -145,24 +141,13 @@ const WhyChooseUsCandidate = () => {
                 </p>
               </div>
               <div className="mt-8 flex md:mt-0 md:flex-shrink-0">
-                <div className="flex flex-col rounded-md shadow gap-2">
-                  <button
-                    onClick={() => {
-                      setShowContactForm(true);
-                    }}
-                    className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#F37F21] hover:bg-[#f87e1b] md:py-4 md:text-lg md:px-10 transition duration-150 cursor-pointer"
-                  >
-                    Book A Meeting
-                  </button>
-                  <a
-                    href="/candidate"
-                    className="inline-flex items-center justify-center gap-3 px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#153E67] bg-white hover:bg-blue-50 md:py-4 md:text-lg md:px-10 transition duration-150"
-                  >
-
-                    More info
-                    <FaArrowRight/>
-                  </a>
-                </div>
+                <a
+                  href="/candidate"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#F37F21] hover:bg-[#f7770f] md:py-4 md:text-lg md:px-10 transition duration-150"
+                >
+                  More info
+                  <FaArrowRight className="transition-transform translate-x-2 duration-500" />
+                </a>
               </div>
             </div>
           </div>

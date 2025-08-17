@@ -102,7 +102,6 @@ const BlogCarosel = () => {
   ];
   return (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Header Section */}
       <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-4">
           Recruitment Insights & Strategies
@@ -115,9 +114,7 @@ const BlogCarosel = () => {
         </p>
       </div>
 
-      {/* Grid Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Left Column - Value Proposition */}
         <div className="lg:col-span-1 bg-gradient-to-br from-[#F37F21] to-orange-500 rounded-xl p-8 text-white shadow-lg flex flex-col">
           <div className="flex-grow">
             <h3 className="text-2xl font-bold mb-6">Why Our Insights Matter</h3>
@@ -179,7 +176,6 @@ const BlogCarosel = () => {
           </div>
         </div>
 
-        {/* Right Column - Blog Carousel */}
         <div className="lg:col-span-3">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
