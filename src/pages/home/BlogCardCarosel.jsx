@@ -97,61 +97,49 @@ const BlogCardCarousel = () => {
     },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [visibleIndexes, setVisibleIndexes] = useState([0, 1, 2]);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isHovered) {
-        setActiveIndex((prev) => (prev + 1) % blogData.length);
-      }
+      setVisibleIndexes((prev) => {
+        const nextIndex = (prev[prev.length - 1] + 1) % blogData.length;
+        return [...prev.slice(1), nextIndex];
+      });
     }, 3000);
+
     return () => clearInterval(interval);
-  }, [blogData.length, isHovered]);
-
-  const getCardPosition = (index) => {
-    const total = blogData.length;
-    const relativeIndex = (index - activeIndex + total) % total;
-
-    if (relativeIndex === total - 1)
-      return { x: -180, z: 0, scale: 0.8, opacity: 0.7 };
-    if (relativeIndex === 0) return { x: 0, z: 50, scale: 1, opacity: 1 };
-    if (relativeIndex === 1) return { x: 180, z: 0, scale: 0.8, opacity: 0.7 };
-    return { x: 0, z: -100, scale: 0, opacity: 0 };
-  };
+  }, [blogData.length]);
 
   return (
-    <div className="relative w-full h-[600px] flex flex-col md:flex-row overflow-hidden shadow-lg">
-      <div
-        className="absolute inset-0 bg-black/60 z-0"
-        style={{
-          backgroundImage: `url(${blogData[activeIndex].image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          transition: "background-image 0.5s ease",
-        }}
-      />
-      <div className="absolute inset-0 bg-black/50"></div>
+    <div
+      className="relative w-full h-[600px] flex overflow-hidden shadow-lg"
+      style={{
+        backgroundImage: `url(${blogData[visibleIndexes[0]].image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/60" />
 
-      <div className="relative z-10 w-full md:w-1/2 flex flex-col justify-center px-6 md:px-10 py-10 text-white">
+      <div className="relative z-10 w-2/5 flex flex-col justify-center px-10 text-white">
         <h3 className="text-lg font-semibold mb-2">Inspiring Insights</h3>
         <AnimatePresence mode="wait">
           <motion.div
-            key={blogData[activeIndex].id}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.5 }}
+            key={blogData[visibleIndexes[0]].id}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -40, scale: 0.95 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              {blogData[activeIndex].heading}
+            <h2 className="text-3xl font-bold mb-4">
+              {blogData[visibleIndexes[0]].heading}
             </h2>
             <p className="mb-6 text-gray-200">
-              {blogData[activeIndex].description}
+              {blogData[visibleIndexes[0]].description}
             </p>
             <Link
-              to={`/blogs/${blogData[activeIndex].slug}`}
-              className="inline-block bg-[#F37F21] text-white px-5 py-2 rounded-full shadow hover:bg-gray-200 transition"
+              to={`/blogs/${blogData[visibleIndexes[0]].slug}`}
+              className="inline-block bg-[#F37F21] text-white px-5 py-2 rounded-full shadow hover:bg-[#eb710e] transition"
             >
               Read More →
             </Link>
@@ -159,108 +147,30 @@ const BlogCardCarousel = () => {
         </AnimatePresence>
       </div>
 
-      <div className="relative z-10 w-full md:w-1/2 flex items-center justify-center overflow-visible">
-        <div
-          className="relative h-[400px] w-full flex items-center justify-center"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          {blogData.map((blog, index) => {
-            const position = getCardPosition(index);
-
-            return (
-              <motion.div
-                key={blog.id}
-                className={`absolute cursor-pointer rounded-xl overflow-hidden shadow-lg`}
-                initial={false}
-                animate={{
-                  x: position.x,
-                  zIndex: index === activeIndex ? 50 : position.z,
-                  scale: position.scale,
-                  opacity: position.opacity,
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                onClick={() => setActiveIndex(index)}
-                style={{
-                  width: 260,
-                  height: 320,
-                  backgroundImage: `url(${blog.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                <div className="w-full h-full bg-black/40 flex items-end p-4">
-                  <motion.p
-                    className="text-white text-sm font-medium"
-                    animate={{
-                      opacity: position.scale === 1 ? 1 : 0.7,
-                      fontSize: position.scale === 1 ? "1rem" : "0.875rem",
-                    }}
-                  >
-                    {blog.heading}
-                  </motion.p>
-                </div>
-              </motion.div>
-            );
-          })}
-
-          <button
-            className="absolute left-4 z-60 cursor-pointer bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
-            onClick={() =>
-              setActiveIndex(
-                (prev) => (prev - 1 + blogData.length) % blogData.length
-              )
-            }
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+      <div className="relative z-10 w-3/5 flex items-center justify-center space-x-6">
+        <AnimatePresence>
+          {visibleIndexes.map((idx, position) => (
+            <motion.div
+              key={blogData[idx].id}
+              initial={{ opacity: 0, y: 60, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: position === 0 ? 1.1 : 0.95 }}
+              exit={{ opacity: 0, y: -60, scale: 0.8 }}
+              transition={{ duration: 0.9, ease: "easeInOut" }}
+              className={`rounded-xl overflow-hidden shadow-lg transition-all ${
+                position === 0 ? "w-64 h-80 z-20" : "w-48 h-64 opacity-80"
+              }`}
+              style={{
+                backgroundImage: `url(${blogData[idx].image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-          </button>
-          <button
-            className="absolute right-4 cursor-pointer z-60 bg-white/30 hover:bg-white/50 rounded-full p-2 backdrop-blur-sm"
-            onClick={() =>
-              setActiveIndex((prev) => (prev + 1) % blogData.length)
-            }
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-50">
-        {blogData.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveIndex(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === activeIndex ? "bg-white" : "bg-white/50"
-            }`}
-          />
-        ))}
+              <div className="w-full h-full bg-black/40 flex items-end justify-center text-white p-2">
+                <p className="text-sm text-center">{blogData[idx].heading}</p>
+              </div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );
