@@ -96,7 +96,7 @@ const BlogCardCarousel = () => {
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     },
   ];
-  // Left content changes
+
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
@@ -106,10 +106,8 @@ const BlogCardCarousel = () => {
     return () => clearInterval(timer);
   }, [blogData.length]);
 
-  // Duplicate data for infinite scroll
   const duplicatedData = [...blogData, ...blogData];
 
-  // Animation controller
   const controls = useAnimation();
 
   useEffect(() => {
@@ -125,7 +123,6 @@ const BlogCardCarousel = () => {
 
   return (
     <div className="relative w-full h-[600px] bg-[#F4F1F0] flex overflow-hidden">
-      {/* LEFT TEXT */}
       <div className="w-2/5 flex flex-col justify-center px-12 text-white z-10">
         <h3 className="text-lg font-semibold mb-2 text-[#F37F21]">
           Inspiring Insights
@@ -152,14 +149,13 @@ const BlogCardCarousel = () => {
         </motion.div>
       </div>
 
-      {/* RIGHT CARDS (infinite scroll) */}
       <div className="w-3/5 flex items-center relative overflow-hidden">
         <motion.div className="flex space-x-6" animate={controls}>
           {duplicatedData.map((item, idx) => (
             <motion.div
               key={idx}
               className="w-64 h-80 rounded-2xl overflow-hidden shadow-lg flex-shrink-0 relative cursor-pointer"
-              onHoverStart={() => controls.stop()} // ⏸ Stop scroll
+              onHoverStart={() => controls.stop()}
               onHoverEnd={() =>
                 controls.start({
                   x: "-50%",
@@ -169,7 +165,7 @@ const BlogCardCarousel = () => {
                     repeat: Infinity,
                   },
                 })
-              } // ▶ Resume scroll
+              }
             >
               <img
                 src={item.image}

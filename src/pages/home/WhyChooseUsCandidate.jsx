@@ -9,7 +9,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 import ContactForm from "../../components/ContactForm";
-
+import { motion } from "framer-motion";
 const WhyChooseUsCandidate = () => {
   const [showContactForm, setShowContactForm] = useState(false);
   const benefits = [
@@ -90,7 +90,7 @@ const WhyChooseUsCandidate = () => {
           <div className="md:flex">
             <div className="md:flex-shrink-0">
               <img
-                className="h-48 w-full object-cover md:w-48"
+                className="h-full w-full object-cover md:w-36"
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
                 alt="Happy candidate"
               />
@@ -141,13 +141,15 @@ const WhyChooseUsCandidate = () => {
                 </p>
               </div>
               <div className="mt-8 flex md:mt-0 md:flex-shrink-0">
-                <a
+                <motion.a
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="/candidate"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#F37F21] hover:bg-[#f7770f] md:py-4 md:text-lg md:px-10 transition duration-150"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#F37F21] hover:bg-[#f7770f] md:py-4 md:text-lg md:px-10 transition-all duration-300 hover:-translate-y-1"
                 >
                   More info
                   <FaArrowRight className="transition-transform translate-x-2 duration-500" />
-                </a>
+                </motion.a>
               </div>
             </div>
           </div>

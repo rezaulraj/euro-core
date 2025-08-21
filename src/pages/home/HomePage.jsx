@@ -23,8 +23,8 @@ const HomePage = () => {
       <WhyChooseUsCandidate />
       {/* <BlogCarosel /> */}
       <BlogCardCarosel />
-      <Consultation />
       <WhyCloudeKonektion />
+      <Consultation />
       <OurPartner />
       <ContactHelp />
     </div>

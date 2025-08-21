@@ -28,6 +28,7 @@ import {
   FaPallet,
   FaWrench,
   FaTruck,
+  FaHeadset,
 } from "react-icons/fa";
 import ContactForm from "../../components/ContactForm";
 
@@ -714,11 +715,12 @@ const AllServices = () => {
                 // section?.scrollIntoView({ behavior: "smooth" });
                 setShowContactForm(true);
               }}
-              className="px-8 py-3 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg hover:from-[#E06D1A] hover:to-[#D45C0A] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden"
+              className="px-8 py-3 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg hover:from-[#E06D1A] hover:to-[#D45C0A] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden flex items-center gap-2 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Request Staff</span>
+              <span className="relative z-10">Free Consultation</span>{" "}
+              <FaHeadset className="text-lg" />
               <span className="absolute inset-0 bg-gradient-to-r from-[#E06D1A] to-[#D45C0A] opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
             </motion.button>
             <motion.button
@@ -727,7 +729,7 @@ const AllServices = () => {
                 section?.scrollIntoView({ behavior: "smooth" });
                 // setShowContactForm(true);
               }}
-              className="px-8 py-3 bg-transparent border-2 border-[#123B65] text-[#123B65] font-bold rounded-lg hover:bg-[#123B65]/10 transition-colors duration-300 hover:shadow-lg"
+              className="px-8 py-3 bg-transparent border-2 border-[#123B65] text-[#123B65] font-bold rounded-lg hover:bg-[#123B65]/10 transition-colors duration-300 hover:shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -32,7 +32,6 @@ const PartnerHome = () => {
     },
   ];
 
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -79,7 +78,6 @@ const PartnerHome = () => {
       viewport={{ once: true, amount: 0.2 }}
       variants={container}
     >
-   
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(10)].map((_, i) => (
           <motion.div
@@ -164,7 +162,6 @@ const PartnerHome = () => {
           ))}
         </motion.div>
 
-       
         <motion.div className="text-center" variants={item}>
           <motion.a
             href="/partnership"
@@ -172,7 +169,7 @@ const PartnerHome = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span>LEARN MORE</span>
+            <span>Be Our Partner</span>
             <motion.span
               className="ml-3"
               animate={{ x: [0, 5, 0] }}

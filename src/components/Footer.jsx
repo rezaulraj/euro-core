@@ -23,11 +23,11 @@ const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Industries", href: "/industries" },
-    { name: "For Employers", href: "/for-employers" },
-    { name: "What We Offer", href: "/what-we-offer" },
+    { name: "Employers", href: "/employers" },
+    { name: "Be Our Candidate", href: "/candidate" },
     { name: "Partner", href: "/partnership" },
     { name: "About Us", href: "/about-us" },
-    { name: "Join Us", href: "/career" },
+    { name: "Be Our Partner", href: "/partnership" },
     { name: "Blogs", href: "/blogs" },
   ];
 

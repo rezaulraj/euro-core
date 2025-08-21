@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { FaUserTie, FaChartLine, FaArrowRight } from "react-icons/fa";
 import heroImage from "../../assets/employee/heroemp.jpg";
 import { motion } from "framer-motion";
-import ContactForm from "../../components/ContactForm";
+
+import Calendly from "../../components/Calendly";
 
 const HeroEmployee = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
   return (
     <div className="relative h-screen min-h-[500px] w-full overflow-hidden">
       <div className="absolute inset-0">
@@ -33,9 +34,7 @@ const HeroEmployee = () => {
 
         <div className="flex flex-wrap justify-center gap-6 mt-3">
           <motion.button
-            onClick={() => {
-              setShowContactForm(true);
-            }}
+            onClick={() => setShowCalendly(true)}
             className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -46,7 +45,7 @@ const HeroEmployee = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-[#E06D1A] to-[#D45C0A] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10 flex items-center">
               <FaUserTie className="mr-3 text-xl" />
-              <span>Request Staff</span>
+              <span>Hire Skilled Worker</span>
               <FaArrowRight className="ml-3 transition-transform duration-300 group-hover:translate-x-1" />
             </div>
           </motion.button>
@@ -78,11 +77,8 @@ const HeroEmployee = () => {
 
       <div className="absolute bottom-10 left-10 w-24 h-24 rounded-full bg-[#00BCFF]/10 blur-xl animate-float"></div>
       <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-[#0066FF]/10 blur-xl animate-float-delay"></div>
-      <ContactForm
-        show={showContactForm}
-        onClose={() => setShowContactForm(false)}
-      />
 
+      <Calendly show={showCalendly} onClose={() => setShowCalendly(false)} />
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

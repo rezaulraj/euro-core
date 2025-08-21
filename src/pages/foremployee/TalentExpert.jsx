@@ -23,7 +23,7 @@ const TalentExperts = () => {
     email: "",
     "hiring-needs": "",
     "number-needed": 1,
-    "selected-industry": "", 
+    "selected-industry": "",
     message: "",
   });
 
@@ -154,7 +154,6 @@ const TalentExperts = () => {
 
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-     
       {showPopup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-xl shadow-2xl max-w-md w-full p-8 relative">
@@ -206,7 +205,6 @@ const TalentExperts = () => {
         </div>
       )}
 
-      
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
           <div
@@ -227,7 +225,6 @@ const TalentExperts = () => {
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
           <div className="space-y-12">
             <div className="text-center lg:text-left">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -242,9 +239,7 @@ const TalentExperts = () => {
               </p>
             </div>
 
-          
             <div className="space-y-8">
-              
               <div className="relative bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#F37F21] rounded-full flex items-center justify-center text-white">
                   <FaUserTie className="text-xl" />
@@ -270,7 +265,6 @@ const TalentExperts = () => {
                 </div>
               </div>
 
-             
               <div className="relative bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#F37F21] rounded-full flex items-center justify-center text-white">
                   <FaGlobe className="text-xl" />
@@ -296,7 +290,6 @@ const TalentExperts = () => {
                 </div>
               </div>
 
-            
               <div className="relative bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-[#F37F21] rounded-full flex items-center justify-center text-white">
                   <FaClock className="text-xl" />
@@ -324,7 +317,6 @@ const TalentExperts = () => {
             </div>
           </div>
 
-          
           <div className="bg-white rounded-xl shadow-xl overflow-hidden">
             <div className="p-8 md:p-10">
               <div className="text-center mb-8">
@@ -413,7 +405,6 @@ const TalentExperts = () => {
                   />
                 </div>
 
-                
                 <div className="space-y-1">
                   <label
                     htmlFor="selected-industry"
@@ -440,7 +431,6 @@ const TalentExperts = () => {
                   </select>
                 </div>
 
-               
                 <div className="space-y-1">
                   <label
                     htmlFor="number-needed"
@@ -511,7 +501,6 @@ const TalentExperts = () => {
                   </select>
                 </div>
 
-              
                 <div className="space-y-1">
                   <label
                     htmlFor="message"
@@ -532,7 +521,7 @@ const TalentExperts = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#F37F21] to-[#F37F21] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center cursor-pointer"
+                  className="w-full bg-[#F37F21] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#123B65] transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center cursor-pointer"
                 >
                   <span>Request Talent Consultation</span>
                 </button>
@@ -542,7 +531,6 @@ const TalentExperts = () => {
         </div>
       </div>
 
-    
       <style jsx="true" global="true">{`
         @keyframes float {
           0%,

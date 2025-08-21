@@ -47,7 +47,7 @@ const Header = () => {
     },
     {
       label: "Employers",
-      path: "/for-employers",
+      path: "/employers",
       icon: <GrUserWorker className="text-xl" />,
     },
     {
