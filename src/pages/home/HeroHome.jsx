@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "../../assets/home/herohome.webp";
 import {
@@ -9,10 +9,16 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 import ContactForm from "../../components/ContactForm";
+import axios from "axios";
 
 const HeroHome = () => {
   const [showContactForm, setShowContactForm] = useState(false);
-
+  useEffect(() => {
+    axios
+      .post("http://localhost:5000/api/visitors/track")
+      .then((res) => console.log("Visitor tracked:", res.data))
+      .catch((err) => console.error("Error tracking visitor", err));
+  }, []);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
