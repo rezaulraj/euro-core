@@ -126,7 +126,6 @@ const EmployerRecruitment = () => {
 
       <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
           <motion.div className="space-y-8" variants={container}>
             <motion.div className="flex items-center space-x-3" variants={item}>
               <div className="w-12 h-1 bg-[#F37F21]"></div>
@@ -152,7 +151,6 @@ const EmployerRecruitment = () => {
               build high-performing teams that drive your business forward.
             </motion.p>
 
-    
             <motion.div className="space-y-4" variants={container}>
               {[
                 "✓ Precision-matched candidates in 72 hours or less",
@@ -171,10 +169,9 @@ const EmployerRecruitment = () => {
               ))}
             </motion.div>
 
-          
             <motion.div variants={item} className="pt-4">
               <a
-                href="/for-employers"
+                href="/employers"
                 className="inline-flex items-center justify-center gap-3 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <FaHandshake className="text-xl" />
@@ -184,7 +181,6 @@ const EmployerRecruitment = () => {
             </motion.div>
           </motion.div>
 
-         
           <motion.div className="relative" variants={slideIn}>
             <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
@@ -216,7 +212,6 @@ const EmployerRecruitment = () => {
                 ))}
               </div>
 
-            
               <div className="mt-8 bg-blue-50/50 p-4 rounded-lg border border-blue-100 text-center">
                 <p className="text-blue-800 font-medium">
                   "EuroCore reduced our hiring time by 60% while improving

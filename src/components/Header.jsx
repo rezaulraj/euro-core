@@ -8,7 +8,7 @@ import {
 } from "react-icons/hi";
 import { MdOutlineHome } from "react-icons/md";
 import { TbUsersPlus } from "react-icons/tb";
-import { GrUserWorker } from "react-icons/gr";
+import { GrGallery, GrUserWorker } from "react-icons/gr";
 import { RiServiceLine } from "react-icons/ri";
 import ContactForm from "./ContactForm";
 import logo2 from "/eurocore-logo.png?url";
@@ -69,6 +69,11 @@ const Header = () => {
           icons: <FaUsersBetweenLines className="text-white" />,
           path: "/candidate",
         },
+        {
+          label: "Gallery",
+          icons: <GrGallery className="text-white" />,
+          path: "/gallerys",
+        },
       ],
     },
     {
@@ -91,7 +96,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
   useEffect(() => {
     const currentPath = location.pathname;
     const activeItem = navItems.find(
@@ -151,12 +155,10 @@ const Header = () => {
           </div>
         )}
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-         
           <a href="/">
             <img src={scrolled ? logo2 : logo3} alt="logo" className="h-6" />
           </a>
 
-         
           <button
             className="md:hidden focus:outline-none p-2 rounded-full transition-all duration-300 hover:bg-gray-100 hover:bg-opacity-20"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -176,7 +178,6 @@ const Header = () => {
             )}
           </button>
 
-          
           <nav className="hidden md:flex items-center space-x-6 relative">
             {navItems.map((item, idx) => (
               <div key={idx} className="relative group">
@@ -225,9 +226,7 @@ const Header = () => {
             ))}
           </nav>
 
-          
           <div className="hidden md:flex items-center space-x-2">
-           
             <div className="relative">
               <div
                 className="inline-block"
@@ -286,7 +285,6 @@ const Header = () => {
               </div>
             </div>
 
-          
             <button
               onClick={() => setShowContactForm(true)}
               className={`flex items-center space-x-2 px-6 py-2 rounded-full text-lg font-medium transition-all duration-300 cursor-pointer ${
@@ -301,7 +299,6 @@ const Header = () => {
           </div>
         </div>
 
-    
         {mobileMenuOpen && (
           <div className="md:hidden bg-white h-screen shadow-xl transition-all duration-500 overflow-y-auto">
             <div className="container mx-auto px-4 py-2">

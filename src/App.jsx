@@ -15,6 +15,7 @@ import Candidate from "./pages/candiaete/Candidate";
 import BlogDetails from "./pages/blog/BlogDetails";
 import ScrollToTop from "./components/ScrollToTop";
 import { FaArrowUpFromBracket } from "react-icons/fa6";
+import GalleryPage from "./pages/gallery/GalleryPage";
 function App() {
   const handleScrollToTop = () => {
     window.scrollTo({
@@ -33,6 +34,7 @@ function App() {
           <Route path="what-we-offer" element={<CandidatePage />} />
           <Route path="partnership" element={<PartnerPage />} />
           <Route path="candidate" element={<Candidate />} />
+          <Route path="gallerys" element={<GalleryPage />} />
           <Route path="career" element={<JoinUsPage />} />
           <Route path="industries" element={<ServicePage />} />
           <Route path="terms-and-conditions" element={<TermsConditionPage />} />

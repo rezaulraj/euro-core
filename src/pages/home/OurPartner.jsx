@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { FaQuoteLeft, FaPause, FaPlay } from "react-icons/fa";
+import { FaQuoteLeft, FaPause, FaPlay, FaStar } from "react-icons/fa";
+import axios from "axios";
 import partner1 from "../../assets/home/pat1.avif";
 import partner2 from "../../assets/home/pat2.avif";
 import partner3 from "../../assets/home/pat3.avif";
@@ -7,62 +8,130 @@ import partner4 from "../../assets/home/pat4.avif";
 import partner5 from "../../assets/home/pat5.avif";
 
 const OurPartner = () => {
-  const testimonials = [
+  // Default partner testimonials in case API fails
+  const defaultTestimonials = [
     {
       id: 1,
       quote:
-        "Cloud Konektion played a key role in helping us secure outstanding leadership talent across financial services and other sectors. Their consultative approach enabled us to fill critical roles like Chief Product Officer and Chief Operating Officer, bringing fresh strategic perspective to our leadership team.",
-      name: "Ivonny Liemantika",
-      position: "Executive Head of Talent Acquisition at Sinarmas BCE",
+        "We struggled to find skilled factory workers locally. The partnership helped us fill key positions quickly with qualified, motivated staff.",
+      name: "Tomas Novak",
+      position: "Manufacturing Partner",
       image: partner1,
+      rating: 5,
+      tags: ["CzechRepublic", "Manufacturing", "WorkforceSolutions"],
     },
     {
       id: 2,
       quote:
-        "Partnering with Cloud Konektion transformed our leadership recruitment. From sourcing top-tier candidates to ensuring alignment with our business strategy, their precision and dedication have fueled our continued growth.",
-      name: "William Twining",
-      position: "Director, Talent Resources at Charoen Pokphand Group (CP)",
+        "We've hired several housekeeping and maintenance staff through this agency. Every candidate met our standards, and communication was always professional and efficient.",
+      name: "Sofia Martins",
+      position: "Facility Management Partner",
       image: partner2,
+      rating: 5,
+      tags: ["Portugal", "FacilityManagement", "ReliableService"],
     },
     {
       id: 3,
       quote:
-        "Their team helped us build a high-performing division by delivering exceptional professionals for key roles. Cloud Konektion’s commitment to quality has been instrumental in driving our growth and success.",
-      name: "Frederick Loy",
-      position: "Group Recruitment Manager at Foodpanda",
+        "Partnering with EuroCore transformed our recruitment process. Their understanding of our industry needs and quick response time has been invaluable.",
+      name: "Marco Rossi",
+      position: "HR Director",
       image: partner3,
+      rating: 5,
+      tags: ["Italy", "Efficient", "QualityStaff"],
     },
     {
       id: 4,
       quote:
-        "Finding the right talent is critical. Cloud Konektion took the time to understand our goals and delivered candidates who not only met the role requirements but also fit seamlessly with our culture. They've become a trusted hiring partner.",
-      name: "Yassine Bel Mamoun",
-      position: "Chief Operating Officer at Manatal",
+        "The quality of candidates provided by EuroCore consistently exceeds our expectations. They've become an essential partner for our staffing needs.",
+      name: "Elena Petrova",
+      position: "Operations Manager",
       image: partner4,
+      rating: 5,
+      tags: ["Poland", "Quality", "Reliable"],
     },
     {
       id: 5,
       quote:
-        "Our experience has been nothing short of exceptional. Cloud Konektion delivered high-caliber candidates for specialized roles, enabling us to scale with confidence and clarity.",
-      name: "Juliette Gimenez",
-      position: "Founder & CEO at Goxip",
+        "Outstanding service and exceptional candidates. EuroCore understands our business needs and delivers top-tier talent every time.",
+      name: "James Wilson",
+      position: "CEO",
       image: partner5,
+      rating: 5,
+      tags: ["Germany", "Excellence", "Partnership"],
     },
   ];
 
+  const [testimonials, setTestimonials] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const scrollRef = useRef(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isPaused) {
-        setActiveIndex((prev) => (prev + 1) % testimonials.length);
-      }
-    }, 5000);
+    fetchPartnerTestimonials();
+  }, []);
 
-    return () => clearInterval(interval);
+  useEffect(() => {
+    if (testimonials.length > 0) {
+      const interval = setInterval(() => {
+        if (!isPaused) {
+          setActiveIndex((prev) => (prev + 1) % testimonials.length);
+        }
+      }, 5000);
+
+      return () => clearInterval(interval);
+    }
   }, [isPaused, testimonials.length]);
+
+  const fetchPartnerTestimonials = async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(
+        "http://localhost:5000/api/testimonials"
+      );
+
+      // Filter only partner testimonials and ensure they are featured
+      const partnerTestimonials = response.data.filter(
+        (testimonial) =>
+          testimonial.role === "partner" && testimonial.isFeatured
+      );
+
+      // Map API data to our component structure
+      const mappedTestimonials =
+        partnerTestimonials.length > 0
+          ? partnerTestimonials.map((testimonial, index) => ({
+              id: testimonial._id,
+              quote: testimonial.text,
+              name: testimonial.author,
+              position: getPositionFromTags(testimonial.tags),
+              image: testimonial.image,
+              rating: testimonial.rating,
+              tags: testimonial.tags,
+              apiData: testimonial,
+            }))
+          : defaultTestimonials;
+
+      setTestimonials(mappedTestimonials);
+      setError(null);
+    } catch (err) {
+      console.error("Error fetching partner testimonials:", err);
+      setError("Failed to load partner testimonials");
+      setTestimonials(defaultTestimonials);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Helper function to derive position from tags
+  const getPositionFromTags = (tags) => {
+    if (tags.includes("#Manufacturing")) return "Manufacturing Partner";
+    if (tags.includes("#FacilityManagement"))
+      return "Facility Management Partner";
+    if (tags.includes("#Hospitality")) return "Hospitality Partner";
+    return "Business Partner";
+  };
 
   const handleDotClick = (index) => {
     setActiveIndex(index);
@@ -73,8 +142,46 @@ const OurPartner = () => {
     setIsPaused(!isPaused);
   };
 
+  const nextTestimonial = () => {
+    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setActiveIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  };
+
+  const renderStars = (rating) => {
+    return Array.from({ length: 5 }, (_, index) => (
+      <FaStar
+        key={index}
+        className={`w-4 h-4 ${
+          index < rating ? "text-yellow-400" : "text-gray-300"
+        }`}
+      />
+    ));
+  };
+
+  if (loading) {
+    return (
+      <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="relative max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              What our <span className="text-[#F37F21]">partners say</span>
+            </h2>
+            <div className="w-20 h-1 bg-[#F37F21] mx-auto mb-6"></div>
+          </div>
+          <div className="flex justify-center items-center py-20">
+            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#F37F21]"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative bg-gray-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Animated Background */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         {[...Array(6)].map((_, i) => (
           <div
@@ -99,6 +206,11 @@ const OurPartner = () => {
             What our <span className="text-[#F37F21]">partners say</span>
           </h2>
           <div className="w-20 h-1 bg-[#F37F21] mx-auto mb-6"></div>
+          {error && (
+            <p className="text-orange-600 text-sm mt-2">
+              {error} - Showing default testimonials
+            </p>
+          )}
         </div>
 
         <div
@@ -116,10 +228,28 @@ const OurPartner = () => {
                 <div className="bg-white p-8 md:p-10 rounded-xl shadow-md hover:shadow-lg transition-all duration-300">
                   <div className="flex flex-col md:flex-row gap-8">
                     <div className="md:w-2/3">
-                      <FaQuoteLeft className="text-3xl text-[#F37F21] mb-6 opacity-30" />
-                      <p className="text-lg text-gray-600 italic mb-8">
+                      <div className="flex items-center justify-between mb-4">
+                        <FaQuoteLeft className="text-3xl text-[#F37F21] opacity-30" />
+                        <div className="flex items-center space-x-1">
+                          {renderStars(testimonial.rating)}
+                        </div>
+                      </div>
+
+                      <p className="text-lg text-gray-600 italic mb-8 leading-relaxed">
                         "{testimonial.quote}"
                       </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {testimonial.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                          >
+                            {tag.replace(/^#/, "")}
+                          </span>
+                        ))}
+                      </div>
 
                       <div className="flex items-center justify-between">
                         <div>
@@ -150,6 +280,18 @@ const OurPartner = () => {
                           src={testimonial.image}
                           alt={testimonial.name}
                           className="w-full h-full object-cover"
+                          onError={(e) => {
+                            // Fallback to default images if API image fails
+                            const fallbackImages = [
+                              partner1,
+                              partner2,
+                              partner3,
+                              partner4,
+                              partner5,
+                            ];
+                            e.target.src =
+                              fallbackImages[index % fallbackImages.length];
+                          }}
                         />
                       </div>
                     </div>
@@ -160,6 +302,7 @@ const OurPartner = () => {
           </div>
         </div>
 
+        {/* Navigation Dots */}
         <div className="flex justify-center mt-10 space-x-2">
           {testimonials.map((_, index) => (
             <button
@@ -171,6 +314,48 @@ const OurPartner = () => {
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <div className="flex justify-center mt-6 space-x-4">
+          <button
+            onClick={prevTestimonial}
+            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-gray-50 cupsor-pointer"
+            aria-label="Previous testimonial"
+          >
+            <svg
+              className="w-6 h-6 text-[#F37F21] hover:text-[#153E67]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={nextTestimonial}
+            className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:bg-gray-50 cursor-pointer"
+            aria-label="Next testimonial"
+          >
+            <svg
+              className="w-6 h-6 text-[#F37F21] hover:text-[#153E67]"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -189,6 +374,9 @@ const OurPartner = () => {
           75% {
             transform: translateY(20px) translateX(10px) scale(0.95);
           }
+        }
+        .animate-float {
+          animation: float linear infinite;
         }
       `}</style>
     </div>

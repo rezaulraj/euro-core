@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import heroPartner from "../../assets/partner/heropartner.jpg";
 import ContactForm from "../../components/ContactForm";
+import Calendly from "../../components/Calendly";
 
 const HeroPartner = () => {
   const [showContactForm, setShowContactForm] = useState(false);
@@ -88,7 +89,7 @@ const HeroPartner = () => {
         </div>
       </div>
 
-      <ContactForm
+      <Calendly
         show={showContactForm}
         onClose={() => setShowContactForm(false)}
       />

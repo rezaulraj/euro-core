@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import heroImage from "../../assets/home/herohome.webp";
+import heroImage from "../../assets/home/eurohero.jpg";
 import {
   FaSearch,
   FaHeadset,
@@ -161,7 +161,7 @@ const HeroHome = () => {
                   <FaSearch className="text-lg" />
                   <span>Discover Our Expertise</span>
                 </span>
-                <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
+                <span className="absolute inset-0 bg-[#1e4f80] group-hover:text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"></span>
               </motion.button>
 
               <motion.button
