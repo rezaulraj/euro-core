@@ -715,7 +715,7 @@ const AllServices = () => {
                 // section?.scrollIntoView({ behavior: "smooth" });
                 setShowContactForm(true);
               }}
-              className="px-8 py-3 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg hover:from-[#E06D1A] hover:to-[#D45C0A] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden flex items-center gap-2 cursor-pointer"
+              className="px-8 py-3 bg-[#F37F21] text-white font-bold rounded-lg hover:bg-[#1e4f80] transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden flex items-center gap-2 cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

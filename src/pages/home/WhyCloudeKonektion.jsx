@@ -11,6 +11,7 @@ import {
   FaChartBar,
   FaArrowRight,
   FaCheckCircle,
+  FaStar,
 } from "react-icons/fa";
 
 const WhyCloudeKonektion = () => {
@@ -140,24 +141,15 @@ const WhyCloudeKonektion = () => {
   };
 
   return (
-    <div className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Animated Background Elements */}
+    <div className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50">
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse delay-500"></div>
-      </div>
+        <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute top-0 right-0 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px),
-                           linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
-            backgroundSize: "50px 50px",
-          }}
-        ></div>
+        {/* Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[length:50px_50px] bg-grid-slate-800"></div>
       </div>
 
       <motion.div
@@ -170,22 +162,22 @@ const WhyCloudeKonektion = () => {
         {/* Header Section */}
         <motion.div className="text-center mb-20" variants={item}>
           <motion.div
-            className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20"
+            className="inline-flex items-center gap-3 mb-6 px-6 py-3 rounded-full bg-white/80 backdrop-blur-sm border border-blue-200/50 shadow-lg"
             whileHover={{ scale: 1.05 }}
           >
             <div className="w-2 h-2 bg-[#F37F21] rounded-full animate-ping"></div>
-            <span className="text-white/80 text-sm font-semibold tracking-wider">
+            <span className="text-blue-800 text-sm font-semibold tracking-wider">
               WHY CHOOSE US
             </span>
           </motion.div>
 
           <motion.h2
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
             variants={item}
           >
             The EuroCore
             <motion.span
-              className="block bg-gradient-to-r from-[#F37F21] to-orange-400 bg-clip-text text-transparent"
+              className="block bg-[#F37F21] bg-clip-text text-transparent"
               whileHover={{ scale: 1.02 }}
             >
               Advantage
@@ -193,18 +185,18 @@ const WhyCloudeKonektion = () => {
           </motion.h2>
 
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-[#F37F21] to-orange-400 mx-auto mb-8 rounded-full"
+            className="w-24 h-1 bg-[#F37F21] mx-auto mb-8 rounded-full"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           />
 
           <motion.p
-            className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed"
             variants={item}
           >
             Transforming workforce solutions through innovation, expertise, and
-            <span className="text-[#F37F21] font-semibold">
+            <span className="bg-[#F37F21] bg-clip-text text-transparent font-semibold">
               {" "}
               unparalleled commitment
             </span>{" "}
@@ -232,7 +224,7 @@ const WhyCloudeKonektion = () => {
                 <div className="relative group">
                   {/* Main Image */}
                   <motion.div
-                    className="relative rounded-3xl overflow-hidden shadow-2xl"
+                    className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -241,11 +233,11 @@ const WhyCloudeKonektion = () => {
                       alt={reason.title}
                       className="w-full h-96 object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                     {/* Floating Number Badge */}
                     <motion.div
-                      className={`absolute top-6 left-6 w-16 h-16 rounded-2xl bg-gradient-to-br ${reason.gradient} flex items-center justify-center shadow-lg`}
+                      className={`absolute top-6 left-6 w-16 h-16 rounded-2xl bg-[#F37F21] flex items-center justify-center shadow-lg border-2 border-white`}
                       variants={floatingVariants}
                       animate="animate"
                     >
@@ -253,11 +245,14 @@ const WhyCloudeKonektion = () => {
                         {reason.number}
                       </span>
                     </motion.div>
+
+                    {/* Image Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 mix-blend-overlay"></div>
                   </motion.div>
 
-                  {/* Floating Elements */}
+                  {/* Enhanced Floating Elements */}
                   <motion.div
-                    className="absolute -top-4 -right-4 w-8 h-8 bg-[#F37F21] rounded-full shadow-lg"
+                    className="absolute -top-4 -right-4 w-8 h-8 bg-[#F37F21] rounded-full shadow-lg border-2 border-white"
                     animate={{
                       y: [0, -10, 0],
                       scale: [1, 1.2, 1],
@@ -269,7 +264,7 @@ const WhyCloudeKonektion = () => {
                     }}
                   />
                   <motion.div
-                    className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full shadow-lg"
+                    className="absolute -bottom-4 -left-4 w-6 h-6 bg-[#F37F21] rounded-full shadow-lg border-2 border-white"
                     animate={{
                       y: [0, 10, 0],
                       scale: [1, 1.3, 1],
@@ -296,11 +291,11 @@ const WhyCloudeKonektion = () => {
                   whileHover={{ x: 10 }}
                 >
                   <div
-                    className={`p-4 rounded-2xl bg-gradient-to-br ${reason.gradient} shadow-lg`}
+                    className={`p-4 rounded-2xl bg-[#F37F21] shadow-lg border border-white/20`}
                   >
                     <div className="text-white">{reason.icon}</div>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-white">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
                     {reason.title}
                   </h3>
                 </motion.div>
@@ -310,7 +305,7 @@ const WhyCloudeKonektion = () => {
                   {reason.description.map((paragraph, i) => (
                     <motion.p
                       key={i}
-                      className="text-lg text-gray-300 leading-relaxed"
+                      className="text-lg text-gray-700 leading-relaxed"
                       whileHover={{ x: 5 }}
                     >
                       {paragraph}
@@ -330,14 +325,14 @@ const WhyCloudeKonektion = () => {
                       {reason.features.map((feature, i) => (
                         <motion.div
                           key={i}
-                          className="flex items-center gap-3 p-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#F37F21]/30 transition-all duration-300"
+                          className="flex items-center gap-3 p-3 rounded-xl bg-white/80 backdrop-blur-sm border border-blue-200/50 shadow-sm hover:shadow-md transition-all duration-300 hover:border-blue-300"
                           whileHover={{
                             scale: 1.02,
-                            backgroundColor: "rgba(255,255,255,0.1)",
+                            backgroundColor: "rgba(255,255,255,0.9)",
                           }}
                         >
-                          <div className="text-[#F37F21]">{feature.icon}</div>
-                          <span className="text-white font-medium">
+                          <div className="text-blue-600">{feature.icon}</div>
+                          <span className="text-gray-800 font-medium">
                             {feature.text}
                           </span>
                         </motion.div>
@@ -350,54 +345,46 @@ const WhyCloudeKonektion = () => {
                       {(reason.highlights || reason.benefits).map((item, i) => (
                         <motion.div
                           key={i}
-                          className="flex items-center gap-3"
+                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-white/50 transition-colors duration-200"
                           whileHover={{ x: 5 }}
                         >
-                          <FaCheckCircle className="text-[#F37F21] flex-shrink-0" />
-                          <span className="text-gray-300">{item}</span>
+                          <FaCheckCircle className="text-green-500 flex-shrink-0" />
+                          <span className="text-gray-700">{item}</span>
                         </motion.div>
                       ))}
                     </div>
                   )}
                 </motion.div>
 
-                {/* CTA Button */}
-                <motion.button
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#F37F21] to-orange-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 mt-6 w-fit"
-                  whileHover={{
-                    scale: 1.05,
-                    background: "linear-gradient(45deg, #F37F21, #ff8c42)",
-                  }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Discover More</span>
-                  <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
-                </motion.button>
+               
               </motion.div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Bottom CTA */}
+        {/* Enhanced Bottom CTA */}
         <motion.div
-          className="text-center mt-20 pt-12 border-t border-white/10"
+          className="text-center mt-20 pt-12 border-t border-blue-200/30"
           variants={item}
         >
           <motion.div
-            className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#F37F21]/30 transition-all duration-300"
+            className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-200/50 shadow-xl hover:shadow-2xl transition-all duration-300"
             whileHover={{ y: -5 }}
           >
             <div className="text-left">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Ready to Transform Your Workforce?
-              </h3>
-              <p className="text-gray-300">
+              <div className="flex items-center gap-2 mb-2">
+                <FaStar className="text-yellow-500" />
+                <h3 className="text-2xl font-bold text-gray-900">
+                  Ready to Transform Your Workforce?
+                </h3>
+              </div>
+              <p className="text-gray-700">
                 Join hundreds of companies that trust EuroCore for their
                 staffing solutions
               </p>
             </div>
             <motion.button
-              className="px-8 py-3 bg-gradient-to-r from-[#F37F21] to-orange-500 text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-300 whitespace-nowrap"
+              className="px-8 py-3 bg-[#F37F21] hover:bg-[#1e4f80] text-white font-semibold rounded-xl hover:shadow-lg transition-all cursor-pointer duration-300 whitespace-nowrap border border-blue-500/20"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -406,6 +393,33 @@ const WhyCloudeKonektion = () => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Add custom animations */}
+      <style jsx>{`
+        @keyframes blob {
+          0% {
+            transform: translate(0px, 0px) scale(1);
+          }
+          33% {
+            transform: translate(30px, -50px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 20px) scale(0.9);
+          }
+          100% {
+            transform: translate(0px, 0px) scale(1);
+          }
+        }
+        .animate-blob {
+          animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
+      `}</style>
     </div>
   );
 };

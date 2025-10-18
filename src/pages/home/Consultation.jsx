@@ -167,11 +167,9 @@ const Consultation = () => {
 
             <motion.button
               onClick={() => {
-                // const section = document.querySelector("#contact");
-                // section?.scrollIntoView({ behavior: "smooth" });
                 setShowContactForm(true);
               }}
-              className="inline-flex items-center justify-center px-8 py-4 bg-[#F37F21] text-white rounded-lg font-semibold hover:bg-[#F37F21] transition-all duration-300 hover:shadow-lg cursor-pointer"
+              className="inline-flex items-center justify-center px-8 py-4 bg-[#F37F21] text-white rounded-lg font-semibold hover:bg-[#1e4f80] transition-all duration-300 hover:shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

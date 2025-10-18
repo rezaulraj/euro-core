@@ -171,8 +171,8 @@ const EmployerRecruitment = () => {
 
             <motion.div variants={item} className="pt-4">
               <a
-                href="/employers"
-                className="inline-flex items-center justify-center gap-3 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
+                href="/candidate"
+                className="inline-flex items-center justify-center gap-3 bg-[#F37F21] hover:bg-[#1e4f80] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 <FaHandshake className="text-xl" />
                 More About Our Talent Solution

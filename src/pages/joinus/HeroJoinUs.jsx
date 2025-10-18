@@ -41,7 +41,7 @@ const HeroJoinUs = () => {
                 onClick={() => {
                   setShowContactForm(true);
                 }}
-                className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#F37F21] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+                className="flex items-center gap-2 bg-[#F37F21] text-white px-8 py-4 rounded-lg font-bold hover:bg-[#1e4f80] transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
               >
                 Connect With Us
               </button>

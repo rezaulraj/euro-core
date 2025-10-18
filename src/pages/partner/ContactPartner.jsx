@@ -180,7 +180,7 @@ const ContactPartner = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#F37F21] hover:bg-[#E5711A] text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center cursor-pointer"
+                    className="w-full bg-[#F37F21] hover:bg-[#1e4f80] text-white font-bold py-4 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center cursor-pointer"
                   >
                     <FaHandshake className="mr-2" />
                     Submit Partnership Request

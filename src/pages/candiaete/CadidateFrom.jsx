@@ -233,7 +233,7 @@ const CandidateForm = () => {
                 <div>
                   <button
                     type="submit"
-                    className="w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-[#F37F21] hover:bg-[#F37F21]/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F37F21] transition-all"
+                    className="w-full flex justify-center items-center py-4 px-6 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-[#F37F21] hover:bg-[#1e4f80] cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F37F21] transition-all"
                   >
                     Submit Application
                   </button>

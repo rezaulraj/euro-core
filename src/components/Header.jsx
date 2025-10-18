@@ -227,7 +227,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-2">
-            <div className="relative">
+            {/* <div className="relative">
               <div
                 className="inline-block"
                 onMouseEnter={() => setIsHoveringLanguage(true)}
@@ -283,7 +283,7 @@ const Header = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <button
               onClick={() => setShowContactForm(true)}
@@ -365,7 +365,7 @@ const Header = () => {
                   </div>
                 ))}
               </nav>
-              <div className="mt-4 pt-4 border-t border-gray-200">
+              {/* <div className="mt-4 pt-4 border-t border-gray-200">
                 <h4 className="text-gray-500 text-xl mb-4 font-medium">
                   Select Language
                 </h4>
@@ -393,7 +393,7 @@ const Header = () => {
                     </button>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               <button
                 onClick={() => {

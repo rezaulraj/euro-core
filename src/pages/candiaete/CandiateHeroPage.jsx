@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import heroImage from "../../assets/candidate/candiate.webp?url";
 import {
   FiUser,
@@ -9,8 +9,10 @@ import {
   FiCheckCircle,
 } from "react-icons/fi";
 import { HiOutlineLightningBolt } from "react-icons/hi";
+import Calendly from "../../components/Calendly";
 
 const CandidateHeroPage = () => {
+  const [showContactForm, setShowContactForm] = useState(false);
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -94,11 +96,18 @@ const CandidateHeroPage = () => {
             </div>
           </div>
 
-          <button className="flex items-center justify-center mt-16 gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold mx-auto transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#F37F21]/30">
+          <button
+            onClick={() => setShowContactForm(true)}
+            className="flex items-center justify-center mt-16 gap-2 bg-[#F37F21] hover:bg-[#1e4f80] cursor-pointer text-white px-8 py-4 rounded-lg font-bold mx-auto transition-all duration-300 transform hover:scale-105 shadow-lg shadow-[#F37F21]/30"
+          >
             Start Your Journey <FiArrowRight className="animate-pulse" />
           </button>
         </div>
       </div>
+      <Calendly
+        show={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </div>
   );
 };

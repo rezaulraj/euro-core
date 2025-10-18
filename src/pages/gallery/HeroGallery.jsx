@@ -15,7 +15,7 @@ const HeroGallery = () => {
 
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-32">
         <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in">
-          <span className="w-2 h-2 bg-green-400 rounded-full animate-ping mr-2"></span>
+          <span className="w-2 h-2 bg-[#F37F21] rounded-full animate-ping mr-2"></span>
           <span className="text-sm font-semibold tracking-wider">
             SUCCESS STORIES
           </span>
@@ -26,7 +26,7 @@ const HeroGallery = () => {
             Recruitment
           </span>
           <br />
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#1e4f80] via-purple-400 to-[#F37F21] bg-clip-text text-transparent">
             Success Stories
           </span>
         </h1>
@@ -66,9 +66,9 @@ const HeroGallery = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl font-semibold text-white shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 hover:from-blue-500 hover:to-purple-500 min-w-[200px]">
+          <button className="group relative px-8 cursor-pointer py-4 bg-[#F37F21] rounded-xl font-semibold text-white shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-300 hover:from-blue-500 hover:to-purple-500 min-w-[200px]">
             <span className="relative z-10">View Success Stories</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-[#1e4f80] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </button>
 
           <button className="px-8 py-4 border-2 border-white/30 bg-white/10 backdrop-blur-sm rounded-xl font-semibold text-white hover:bg-white/20 hover:border-white/50 transform hover:-translate-y-1 transition-all duration-300 min-w-[200px]">

@@ -86,7 +86,7 @@ const JoinUs = () => {
               </p>
               <button
                 onClick={() => setIsVideoOpen(true)}
-                className="flex items-center gap-2 px-6 py-3 bg-[#F37F21] text-white rounded-lg font-medium hover:bg-[#f38021d7] transition-colors"
+                className="flex items-center gap-2 px-6 py-3 bg-[#F37F21] text-white rounded-lg font-medium hover:bg-[#1e4f80] transition-colors"
               >
                 <FaCirclePlay />
                 Play Culture Video

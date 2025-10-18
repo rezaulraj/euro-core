@@ -35,14 +35,14 @@ const HeroEmployee = () => {
         <div className="flex flex-wrap justify-center gap-6 mt-3">
           <motion.button
             onClick={() => setShowCalendly(true)}
-            className="group relative overflow-hidden px-8 py-4 bg-gradient-to-r from-[#F37F21] to-[#E06D1A] text-white font-bold rounded-lg shadow-lg cursor-pointer"
+            className="group relative overflow-hidden px-8 py-4 bg-[#F37F21] hover:bg-[#1e4f80] text-white font-bold rounded-lg shadow-lg cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#E06D1A] to-[#D45C0A] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-[#E06D1A] hover:bg-[#1e4f80] "></div>
             <div className="relative z-10 flex items-center">
               <FaUserTie className="mr-3 text-xl" />
               <span>Hire Skilled Worker</span>
@@ -55,7 +55,7 @@ const HeroEmployee = () => {
               const section = document.querySelector("#how-we-work");
               section?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="group relative overflow-hidden px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white/30 hover:border-white/50 backdrop-blur-sm"
+            className="group relative overflow-hidden px-8 py-4 bg-transparent text-white font-bold rounded-lg border-2 border-white/30 hover:border-white/50 backdrop-blur-sm cursor-pointer"
             whileHover={{
               scale: 1.05,
               backgroundColor: "rgba(255, 255, 255, 0.1)",

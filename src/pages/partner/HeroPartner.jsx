@@ -81,7 +81,7 @@ const HeroPartner = () => {
           <div className="flex justify-center">
             <button
               onClick={() => setShowContactForm(true)}
-              className="flex items-center gap-2 bg-[#F37F21] hover:bg-[#E5711A] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
+              className="flex items-center gap-2 bg-[#F37F21] hover:bg-[#1e4f80] text-white px-8 py-4 rounded-lg font-bold transition-all duration-300 transform hover:scale-105 shadow-lg cursor-pointer"
             >
               Become a Partner <FaArrowRight />
             </button>
